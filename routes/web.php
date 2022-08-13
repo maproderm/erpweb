@@ -26,3 +26,5 @@ require __DIR__.'/auth.php';
 require __DIR__.'/includes/general.php';
 
 require __DIR__.'/includes/user.php';
+
+require __DIR__.'/includes/warehouseimaq.php';
