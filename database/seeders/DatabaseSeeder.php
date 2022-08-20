@@ -25,6 +25,12 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CustomerSeeder::class,
             DivisionSeeder::class,
+            BrandSeeder::class,
+            CategorySeeder::class,
+            // ProviderSeeder::class,
+            TmaterialSeeder::class,
+            UmeasurementSeeder::class,
+            SatunidadSeeder::class,
         ]);
     }
 }

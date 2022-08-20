@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
+
+    public function deactivated(){
+        return view('auth.account-deactivated');
+    }
+
+
     public function dashboard(){
         $data        = (object)[];
         $data->user  = Auth::user();

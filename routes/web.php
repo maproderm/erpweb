@@ -28,3 +28,5 @@ require __DIR__.'/includes/general.php';
 require __DIR__.'/includes/user.php';
 
 require __DIR__.'/includes/warehouseimaq.php';
+
+require __DIR__.'/includes/imaqprovider.php';

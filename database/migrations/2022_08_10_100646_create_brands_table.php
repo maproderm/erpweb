@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('imaq_sat_key_u', function (Blueprint $table) {
+        Schema::create('imaq_brands', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('type');
-            $table->string('key');
+            $table->string('description');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('imaq_sat_key_u');
+        Schema::dropIfExists('imaq_brands');
     }
 };

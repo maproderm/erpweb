@@ -20,8 +20,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'last_name',
         'email',
         'password',
+        'last_login',
+        'status',
     ];
 
     /**
@@ -42,4 +45,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function provider() {
+        return $this->belongsTo('App\Models\Imaqprovider', 'provider_id', 'id');
+    }
 }

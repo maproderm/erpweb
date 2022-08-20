@@ -16,7 +16,7 @@ class DivisionSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('division')->insert([
+        DB::table('imaq_division')->insert([
             'name'=>'Almacén IMAQ'
         ] );
 
@@ -24,11 +24,11 @@ class DivisionSeeder extends Seeder
         //     'name'=>'Almacén MaProDerm'
         // ] );
 
-        DB::table('division')->insert([
+        DB::table('imaq_division')->insert([
             'name'=>'Materia Prima'
         ] );
 
-        DB::table('division')->insert([
+        DB::table('imaq_division')->insert([
             'name'=>'Producto Terminado'
         ] );
     }

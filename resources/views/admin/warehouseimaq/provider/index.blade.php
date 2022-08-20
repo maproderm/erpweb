@@ -1,5 +1,5 @@
 @extends('administrator.index')
-@section('title','Inventario | IMAQ')
+@section('title','Proveedores | IMAQ')
 @section('content')
 <div class="d-flex flex-column-fluid">
     <div class="container-fluid">
@@ -8,7 +8,7 @@
                 <div class="p-5">
                     <div class="col-md-4 my-2 my-md-0">
                         <div class="input-icon">
-                            <input type="text" class="form-control" placeholder="Buscar producto" id="filter_client_name"/>
+                            <input type="text" class="form-control" placeholder="Buscar proveedores" id="filter_client_name"/>
                             <span>
                                 <i class="flaticon2-search-1 text-muted"></i>
                             </span>
@@ -23,23 +23,12 @@
                     <tr class="text-start text-dark fw-bolder fs-7 text-uppercase gs-0">
                         <th>N°</th>
                         <th class="min-w-100px">Nombre</th>
-                        <th>Cantidad</th>
-                        <th>División</th>
-                        <th>Categoría</th>
-                        <th>Ubicación</th>
-                        <th>SKU</th>
-                        <th class="text-center">C. barras</th>
-                        <th>Proveedor</th>
-                        <th>Marca</th>
-                        <th class="text-center">U Medida</th>
-                        <th>Tamaño</th>
-                        <th>Tipo Material</th>
-                        <th>U. SAT</th>
-                        <th>P. SAT</th>
-                        <th>Inv. Mínimo</th>
-                        <th>Costo Unit</th>
-                        <th>Venta Sug</th>
-                        <th>Precio</th>
+                        <th>Apellidos</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>RFC</th>
+                        <th class="text-center">Dirección</th>
+                        <th class="text-center">Status</th>
                         <th class="text-center min-w-100px">Acciones</th>
                     </tr>
                     </thead>
@@ -53,5 +42,5 @@
 </div>
 @endsection
 @push('scripts')
-    <script type="text/javascript" src="{{  URL::asset ('js/admin/warehouseimaq/inventory/products.js?v='.rand())  }}"></script>
+    <script type="text/javascript" src="{{  URL::asset ('js/admin/warehouseimaq/provider/providers.js?v='.rand())  }}"></script>
 @endpush

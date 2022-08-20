@@ -958,7 +958,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/pages/user-profile/overview.html">
+                            <a class="menu-link" href="{{ route('view-inventory') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -1179,7 +1179,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/account/overview.html">
+                            <a class="menu-link" href="{{ route('view-provider-imaq') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>

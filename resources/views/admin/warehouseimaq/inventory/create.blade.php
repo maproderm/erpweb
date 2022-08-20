@@ -37,6 +37,7 @@
                             <!--begin::Form-->
 
                             <form id="kt_ecommerce_settings_general_form" class="form" action="{{  route('inventory.store')  }}" method="POST">
+                                @csrf
                             {{-- <form id="kt_ecommerce_settings_general_form" class="form" action="{{ route('create-inventory') }}" method="POST"> --}}
                                 <!--begin::Input group-->
                                 {{-- <div class="mb-7">
@@ -131,10 +132,10 @@
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
-                                            <select class="form-select" data-control="select2" data-placeholder="Selecciona una opción" name="division_product_inventory" value="" >
+                                            <select class="form-select" data-control="select2" data-placeholder="Selecciona una opción" name="division_id" value="{{ old('division_id') }}" >
                                                 <option></option>
                                                 @foreach ($data->division as $division)
-                                                <option value="{{ $division->id }}">{{ $division->name }}</option>
+                                                <option name="division_id" value="{{ $division->id }}">{{ $division->name }}</option>
                                                 @endforeach
                                             </select>
                                             <!--end::Input-->
@@ -152,7 +153,17 @@
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
-                                            <input type="text" class="form-control" name="category_product_inventory" value="" required/>
+                                            <div class="input-group flex-nowrap">
+                                                <span class="input-group-text"><i class="bi bi-truck text-warning"></i></i></span>
+                                                <div class="overflow-hidden flex-grow-1">
+                                                    <select name="category_id" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción" required>
+                                                        <option></option>
+                                                        @foreach ($data->category as $categories)
+                                                        <option name="division_id" value="{{ $categories->id }}">{{ $categories->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <!--end::Input-->
                                         </div>
                                         <!--end::Input group-->
@@ -249,13 +260,11 @@
                                             <div class="input-group flex-nowrap">
                                                 <span class="input-group-text"><i class="bi bi-truck text-warning"></i></i></span>
                                                 <div class="overflow-hidden flex-grow-1">
-                                                    <select name="provider_product_inventory" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción">
+                                                    <select name="provider_id" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción">
                                                         <option></option>
-                                                        <option value="1">Option 1</option>
-                                                        <option value="2">Option 2</option>
-                                                        <option value="3">Option 3</option>
-                                                        <option value="4">Option 4</option>
-                                                        <option value="5">Option 5</option>
+                                                        @foreach ($data->user as $providers)
+                                                        <option name="division_id" value="{{ $providers->id }}">{{ $providers->name }}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
@@ -278,7 +287,17 @@
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
-                                            <input type="text" class="form-control" name="brand_product_inventory" value="" required/>
+                                            <div class="input-group flex-nowrap">
+                                                <span class="input-group-text"><i class="bi bi-truck text-warning"></i></i></span>
+                                                <div class="overflow-hidden flex-grow-1">
+                                                    <select name="brand_id" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción" required>
+                                                        <option></option>
+                                                        @foreach ($data->brand as $brands)
+                                                        <option name="division_id" value="{{ $brands->id }}">{{ $brands->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <!--end::Input-->
                                         </div>
                                         <!--end::Input group-->
@@ -294,7 +313,17 @@
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
-                                            <input type="text" class="form-control" name="unit_of_measurement_inventory" value="" required/>
+                                            <div class="input-group flex-nowrap">
+                                                <span class="input-group-text"><i class="bi bi-truck text-warning"></i></i></span>
+                                                <div class="overflow-hidden flex-grow-1">
+                                                    <select name="unit_of_measurement_id" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción" required>
+                                                        <option></option>
+                                                        @foreach ($data->umedida as $umedidas)
+                                                        <option name="division_id" value="{{ $umedidas->id }}">{{ $umedidas->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <!--end::Input-->
                                         </div>
                                         <!--end::Input group-->
@@ -330,7 +359,17 @@
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
-                                            <input type="text" class="form-control" name="type_of_material_inventory" value="" required/>
+                                            <div class="input-group flex-nowrap">
+                                                <span class="input-group-text"><i class="bi bi-truck text-warning"></i></i></span>
+                                                <div class="overflow-hidden flex-grow-1">
+                                                    <select name="type_of_material_id" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción" required>
+                                                        <option></option>
+                                                        @foreach ($data->typematerial as $typematerials)
+                                                        <option name="division_id" value="{{ $typematerials->id }}">{{ $typematerials->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <!--end::Input-->
                                         </div>
                                         <!--end::Input group-->
@@ -350,7 +389,17 @@
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
-                                            <input type="text" class="form-control" name="key_sat_unit_inventory" value="" required/>
+                                            <div class="input-group flex-nowrap">
+                                                <span class="input-group-text"><i class="bi bi-truck text-warning"></i></i></span>
+                                                <div class="overflow-hidden flex-grow-1">
+                                                    <select name="key_sat_unit_inventory" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción" required>
+                                                        <option></option>
+                                                        @foreach ($data->satunidadkey as $keysat)
+                                                        <option name="key_sat_unit_inventory" value="{{ $keysat->id }}">{{ $keysat->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <!--end::Input-->
                                         </div>
                                         <!--end::Input group-->
@@ -506,9 +555,4 @@
     <!--end::Post-->
 </div>
 <!--end::Content-->
-
-
-
-
-
 @endsection

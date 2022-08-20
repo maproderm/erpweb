@@ -40,5 +40,13 @@ class UserSeeder extends Seeder
             'password'  => Hash::make('Superadmin2022'),
         ]);
         $serigrafia->assignRole('serigrafia');
+
+        $provider = User::create([
+            'name'      => 'Proveedor',
+            'last_name' => 'Prueba',
+            'email'     => 'proveedor@mail.com',
+            'password'  => Hash::make('Superadmin2022'),
+        ]);
+        $provider->assignRole('proveedor');
     }
 }
