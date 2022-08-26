@@ -18,7 +18,7 @@
                         <h1 class="fw-bolder text-gray-900 mb-5">Tu cuenta ha sido desactivado</h1>
                         <!--end::Title-->
                         <!--begin::Text-->
-                        <div class="fw-semibold fs-6 text-gray-500 mb-8">Si se te ha redirigido a ésta página, tu cuenta ha sido inhabilitada
+                        <div class="fw-semibold fs-6 text-gray-900 mb-8">Si se te ha redirigido a ésta página, tu cuenta ha sido inhabilitada
                         <br />Comunícate con el Soporte técnico de IMAQ para obtener ayuda.</div>
                         <!--end::Text-->
                         <!--begin::Link-->

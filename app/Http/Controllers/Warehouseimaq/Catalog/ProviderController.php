@@ -20,7 +20,7 @@ class ProviderController extends Controller
     public function index()
     {
         //
-        return view('admin.warehouseimaq.provider.index');
+        return view('admin.warehouseimaq.catalog.provider.index');
     }
 
     /**

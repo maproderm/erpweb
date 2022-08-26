@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Warehouseimaq\Catalog;
 
 use App\Models\Rol;
 use App\Models\Imaqbrand;
+use App\Models\Imaqcategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\User\UserResource;
 use App\Http\Resources\User\UserCollection;
 
-class BrandController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +20,7 @@ class BrandController extends Controller
     public function index()
     {
         //
-        return view('admin.warehouseimaq.catalog.brand.index');
+        return view('admin.warehouseimaq.catalog.category.index');
     }
 
     /**
@@ -44,9 +45,12 @@ class BrandController extends Controller
     }
 
 
-    public function getBrands() {
+    public function getCategories() {
 
-        return Imaqbrand::get();
+        // return Imaqcategory::get();
+        $request = request();
+        $inventory   = Imaqcategory::with(['division']);
+        return $inventory->where('division_id', 1)->get();
 
     }
     /**
@@ -89,8 +93,39 @@ class BrandController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function delete( $id ) {
+
+        try {
+
+            $deletedCategory     = Imaqcategory::findOrFail($id)->delete();
+
+            if( $deletedCategory ) {
+                $title  = 'Eliminado';
+                $msj    = 'El usuario ha sido eliminado correctamente';
+                $type   = 'success';
+
+            } else {
+
+                $title  = 'Error';
+                $msj    = 'Ocurrio un error durante el proceso, contacte al equipo de sistemas o intentelo más tarde';
+                $type   = 'error';
+
+            }
+
+
+            return response()->json([
+                'title'     => $title,
+                'message'   => $msj,
+                'type'      => $type
+            ]);
+
+        } catch (\Throwable $th) {
+            return response()->json([
+                'title'     => 'Error',
+                'message'   => "Ocurrio un error: " . $th->getMessage(),
+                'type'      => 'error'
+            ]);
+        }
+
     }
 }

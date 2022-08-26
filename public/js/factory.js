@@ -8,7 +8,7 @@ const factoryNixDit = function(){
             searchDelay : 500,
             processing  : true,
             serverSide  : false,
-            order       : [[5, 'asc']],
+            order       : [[0, 'asc']],
             stateSave   : false,
             responsive  : false,
             ajax        : {

@@ -3,7 +3,7 @@
 use App\Http\Controllers\Warehouseimaq\Catalog\ProviderController;
 
 
-Route::group(['middleware' => ['role:superadmin|almacenimaq']], function () {
+Route::group(['middleware' => ['role:developer|superadmin|almacenimaq']], function () {
 
     //providers
     Route::get('/providers',[ProviderController::class,'index'])->middleware(['auth'])->name('view-provider-imaq');

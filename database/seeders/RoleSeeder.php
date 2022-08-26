@@ -16,21 +16,22 @@ class RoleSeeder extends Seeder
     public function run()
     {
         //
-        $roleSuperadmin    = Role::create(['name' => 'superadmin']);
-        $roleProduccion    = Role::create(['name' => 'produccion']);
+        $roleDeveloper      = Role::create(['name' => 'developer']);
+        $roleSuperadmin     = Role::create(['name' => 'superadmin']);
+        $roleProduccion     = Role::create(['name' => 'production']);
         $roleAlmacen        = Role::create(['name' => 'almacenimaq']);
         $roleAlmacen2       = Role::create(['name' => 'almacenmapro']);
         $roleSerigrafia      = Role::create(['name' => 'serigrafia']);
         $roleLaboratorio    = Role::create(['name' => 'laboratorio']);
         $roleDisenio        = Role::create(['name' => 'disenio']);
-        $roleVentas         = Role::create(['name' => 'ventas']);
+        $roleVentas         = Role::create(['name' => 'sales']);
         $roleEmployee       = Role::create(['name' => 'employee']);
         $roleVendedor       = Role::create(['name' => 'vendedorevento']);
         $roleCustomer       = Role::create(['name' => 'customer']);
         $roleAcondicionado  = Role::create(['name' => 'acondicionado']);
         $roleDistribuidor   = Role::create(['name' => 'distribuidor']);
-        $roleProveedor      = Role::create(['name' => 'proveedor']);
-        $roleChofer         = Role::create(['name' => 'chofer']);
+        $roleProveedor      = Role::create(['name' => 'provider']);
+        $roleChofer         = Role::create(['name' => 'driver']);
         $roleProyector      = Role::create(['name' => 'proyector']); //Este rol se utilizara para proyectar graficas en pantallas
         $roleGuest          = Role::create(['name' => 'guest']);
     }

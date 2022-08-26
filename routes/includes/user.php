@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\User\UserController;
 
-Route::group(['middleware' => ['role:superadmin']], function () {
+Route::group(['middleware' => ['role:developer|superadmin']], function () {
     //
     Route::get('/users',[UserController::class,'index'])->middleware(['auth'])->name('view-user');
 

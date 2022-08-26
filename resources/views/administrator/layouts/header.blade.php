@@ -3,7 +3,7 @@
     <!--begin::Brand-->
     <div class="header-brand">
         <!--begin::Logo-->
-        <a href="../../demo8/dist/index.html">
+        <a href="{{ route('dashboard') }}">
             {{-- <img alt="Logo" src="{{ asset('metronic/assets/media/logos/default-dark.svg') }}" class="h-25px h-lg-25px" /> --}}
             <img alt="Logo" src="{{ asset('metronic/assets/media/logos/logoimaq.png') }}" class="h-35px h-lg-35px" />
         </a>
@@ -53,7 +53,7 @@
             <!--begin::Page title-->
             <div class="page-title d-flex justify-content-center flex-column me-5">
                 <!--begin::Title-->
-                <h1 class="d-flex flex-column text-dark fw-bold fs-3 mb-0">Dashboard</h1>
+                <h1 class="d-flex flex-column text-dark fw-bold fs-3 mb-0">IMAQ Industrial Maquiladora</h1>
                 <!--end::Title-->
                 <!--begin::Breadcrumb-->
                 <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 pt-1">

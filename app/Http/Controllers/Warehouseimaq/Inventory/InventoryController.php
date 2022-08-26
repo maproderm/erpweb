@@ -47,7 +47,7 @@ class InventoryController extends Controller
         $data->satunidadkey = Imaqsatunidadkey::all();
         return view('admin.warehouseimaq.inventory.create', compact('data'));
     }
-    
+
 
     /**
      * Store a newly created resource in storage.

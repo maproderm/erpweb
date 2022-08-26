@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('imaq_categories', function (Blueprint $table) {
+        Schema::create('imaq_banks', function (Blueprint $table) {
             $table->id();
+            $table->string('key');
             $table->string('name');
-            $table->tinyInteger('status')->default(1)->comment('0: Activo 1:Inactivo');
-            $table->unsignedBigInteger('division_id')->index()->nullable()->comment('1:AlmacenIMaQ  2:MateriaPrima 3:ProductoTerminado');
-            $table->foreign('division_id')->references('id')->on('imaq_division')->onDelete('cascade');
+            $table->string('description');
+            $table->string('status');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('imaq_categories');
+        Schema::dropIfExists('imaq_banks');
     }
 };

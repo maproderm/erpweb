@@ -3,7 +3,7 @@
 use App\Http\Controllers\Warehouseimaq\Inventory\InventoryController;
 
 
-Route::group(['middleware' => ['role:superadmin|almacenimaq']], function () {
+Route::group(['middleware' => ['role:developer|superadmin|almacenimaq']], function () {
     //products
     Route::get('/inventory',[InventoryController::class,'index'])->middleware(['auth'])->name('view-inventory');
     Route::get('/create-new-product',[InventoryController::class,'create'])->middleware(['auth'])->name('create-inventory');

@@ -894,14 +894,14 @@
             <!--begin::Menu-->
             <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true">
                 <!--begin:Menu item-->
-                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion {{ setOpen('dashboard') }}">
 
                     <!--begin:Menu sub-->
                     <div class="menu-sub menu-sub-accordion">
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link active" href="../../demo8/dist/index.html">
+                            <a class="menu-link {{ setActive('dashboard') }}"  href="{{ route('dashboard') }}">
 
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
@@ -926,7 +926,7 @@
                 <!--end:Menu item-->
 
                 {{-- INICIA ALMACEN IMAQ--}}
-                @hasanyrole('superadmin|almacenimaq')
+                @hasanyrole('developer|superadmin|almacenimaq')
                 <!--begin:Menu item-->
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->
@@ -937,7 +937,7 @@
                 </div>
                 <!--end:Menu item-->
                 <!--begin:Menu item-->
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ setOpen('inventory') }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
                         <span class="menu-icon">
@@ -958,7 +958,8 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="{{ route('view-inventory') }}">
+                            <a class="menu-link {{ setActive('view-inventory') }}" href="{{ route('view-inventory') }}">
+                            {{-- <a class="menu-link" href="{{ route('view-inventory') }}"> --}}
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -970,7 +971,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="{{ route('create-inventory') }}">
+                            <a class="menu-link {{ setActive('create-inventory') }}" href="{{ route('create-inventory') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -1146,11 +1147,27 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/account/overview.html">
+                            <a class="menu-link {{ setActive('brands.index') }}" href="{{ route('brands.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
                                 <span class="menu-title">Marcas</span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--end:Menu item-->
+                    </div>
+                    <!--end:Menu sub-->
+                    <!--begin:Menu sub-->
+                    <div class="menu-sub menu-sub-accordion">
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link {{ setActive('imaqcategories.index') }}" href="{{ route('imaqcategories.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Categorías</span>
                             </a>
                             <!--end:Menu link-->
                         </div>
@@ -1179,7 +1196,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="{{ route('view-provider-imaq') }}">
+                            <a class="menu-link {{ setActive('view-provider-imaq') }}" href="{{ route('view-provider-imaq') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -1228,7 +1245,7 @@
                 {{-- TERMINA ALMACEN IMAQ--}}
 
                 {{-- INICIA LABORATORIO --}}
-                @hasanyrole('superadmin|laboratorio')
+                @hasanyrole('developer')
                 <!--begin:Menu item-->
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->
@@ -1671,7 +1688,7 @@
                 {{-- TERMINA LABORATORIO --}}
 
                 {{-- INICIA PRODUCCION --}}
-                @hasanyrole('superadmin|produccion')
+                @hasanyrole('developer|production')
                 <!--begin:Menu item-->
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->
@@ -2114,7 +2131,7 @@
                 {{-- TERMINA PRODUCCION --}}
 
                 {{-- INICIA SERIGRAFIA --}}
-                @hasanyrole('superadmin|serigrafia')
+                @hasanyrole('developer|serigrafia')
                 <!--begin:Menu item-->
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->
@@ -2557,7 +2574,7 @@
                 {{-- TERMINA SERIGRAFIA --}}
 
                 {{-- INICIA VENTAS --}}
-                @hasanyrole('superadmin|ventas')
+                @hasanyrole('developer|ventas')
                 <!--begin:Menu item-->
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->
@@ -3000,7 +3017,7 @@
                 {{-- TERMINA VENTAS --}}
 
                 {{-- INICIA ALMACEN MAPRODERM --}}
-                @hasanyrole('superadmin|almacenmapro')
+                @hasanyrole('developer|almacenmapro')
                 <!--begin:Menu item-->
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->
@@ -3445,7 +3462,7 @@
 
 
                 {{-- INICIA REPORTES Y ESTADISTICAS --}}
-                @hasanyrole('superadmin')
+                @hasanyrole('developer')
                 <!--begin:Menu item-->
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->
@@ -3497,7 +3514,7 @@
                 {{-- TERMINA REPORTES Y ESTADISTICAS --}}
 
                 {{-- INICIA SEGURIDAD --}}
-                @hasanyrole('superadmin')
+                @hasanyrole('developer')
                 <!--begin:Menu item-->
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->

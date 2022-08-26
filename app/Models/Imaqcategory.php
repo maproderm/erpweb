@@ -20,5 +20,10 @@ class Imaqcategory extends Model
         'id',
         'name',
         'status',
+        'division_id',
     ];
+
+    public function division() {
+        return $this->belongsTo('App\Models\Imaqdivision', 'division_id', 'id');
+    }
 }
