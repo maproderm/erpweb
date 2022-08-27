@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             TmaterialSeeder::class,
             UmeasurementSeeder::class,
             SatunidadSeeder::class,
+            ProductsatSeeder::class,
         ]);
     }
 }

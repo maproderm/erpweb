@@ -11,6 +11,7 @@ use App\Models\Imaqcategory;
 use App\Models\Imaqdivision;
 use App\Models\Imaqprovider;
 use Illuminate\Http\Request;
+use App\Models\Imaqproductsat;
 use App\Models\Imaqsatunidadkey;
 use App\Models\Imaqtypematerial;
 use App\Http\Controllers\Controller;
@@ -39,10 +40,13 @@ class InventoryController extends Controller
     {
         $data               = (object)[];
         $data->division     = Imaqdivision::all();
-        $data->category     = Imaqcategory::all();
+        // $data->category     = Imaqcategory::all();
+        $data->category     = Imaqcategory::all()->where('division_id',1);
         $data->user         = User::all();
         $data->brand        = Imaqbrand::all();
         $data->umedida      = Imaqumedida::all();
+        $data->provider     = Imaqprovider::with('provider')->get();
+        $data->productsat   = Imaqproductsat::all();
         $data->typematerial = Imaqtypematerial::all();
         $data->satunidadkey = Imaqsatunidadkey::all();
         return view('admin.warehouseimaq.inventory.create', compact('data'));

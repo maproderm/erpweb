@@ -262,8 +262,8 @@
                                                 <div class="overflow-hidden flex-grow-1">
                                                     <select name="provider_id" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción">
                                                         <option></option>
-                                                        @foreach ($data->user as $providers)
-                                                        <option name="division_id" value="{{ $providers->id }}">{{ $providers->name }}</option>
+                                                        @foreach ($data->provider as $providers)
+                                                        <option name="division_id" value="{{ $providers->id }}">{{ $providers->user_id }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -382,6 +382,32 @@
                                     <!--begin::Col-->
                                     <div class="col">
                                         <!--begin::Input group-->
+                                        <div class="fv-row mb-7">
+                                            <!--begin::Label-->
+                                            <label class="fs-6 fw-semibold form-label mt-3">
+                                                <span class="required">Clave SAT Producto</span>
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <div class="input-group flex-nowrap">
+                                                <span class="input-group-text"><i class="bi bi-truck text-warning"></i></i></span>
+                                                <div class="overflow-hidden flex-grow-1">
+                                                    <select name="key_sat_product_inventory" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción" required>
+                                                        <option></option>
+                                                        @foreach ($data->productsat as $keysatp)
+                                                        <option name="key_sat_product_inventory" value="{{ $keysatp->id }}">{{ $keysatp->key }} - {{ $keysatp->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--end::Input-->
+                                        </div>
+                                        <!--end::Input group-->
+                                    </div>
+                                    <!--end::Col-->
+                                    <!--begin::Col-->
+                                    <div class="col">
+                                        <!--begin::Input group-->
                                         <div class="fv-row mb-5">
                                             <!--begin::Label-->
                                             <label class="fs-6 fw-semibold form-label mt-3">
@@ -395,27 +421,11 @@
                                                     <select name="key_sat_unit_inventory" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción" required>
                                                         <option></option>
                                                         @foreach ($data->satunidadkey as $keysat)
-                                                        <option name="key_sat_unit_inventory" value="{{ $keysat->id }}">{{ $keysat->name }}</option>
+                                                        <option name="key_sat_unit_inventory" value="{{ $keysat->id }}">{{ $keysat->key }} - {{ $keysat->name }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
                                             </div>
-                                            <!--end::Input-->
-                                        </div>
-                                        <!--end::Input group-->
-                                    </div>
-                                    <!--end::Col-->
-                                    <!--begin::Col-->
-                                    <div class="col">
-                                        <!--begin::Input group-->
-                                        <div class="fv-row mb-7">
-                                            <!--begin::Label-->
-                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                <span class="required">Clave SAT Producto</span>
-                                            </label>
-                                            <!--end::Label-->
-                                            <!--begin::Input-->
-                                            <input type="text" class="form-control" name="key_sat_product_inventory" value="" required/>
                                             <!--end::Input-->
                                         </div>
                                         <!--end::Input group-->
