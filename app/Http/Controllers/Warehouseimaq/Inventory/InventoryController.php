@@ -11,6 +11,7 @@ use App\Models\Imaqcategory;
 use App\Models\Imaqdivision;
 use App\Models\Imaqprovider;
 use Illuminate\Http\Request;
+use App\Models\Imaqlevelarea;
 use App\Models\Imaqproductsat;
 use App\Models\Imaqsatunidadkey;
 use App\Models\Imaqtypematerial;
@@ -42,6 +43,7 @@ class InventoryController extends Controller
         $data->division     = Imaqdivision::all();
         // $data->category     = Imaqcategory::all();
         $data->category     = Imaqcategory::all()->where('division_id',1);
+        $data->levelarea    = Imaqlevelarea::all()->where('division_id',3);
         $data->user         = User::all();
         $data->brand        = Imaqbrand::all();
         $data->umedida      = Imaqumedida::all();

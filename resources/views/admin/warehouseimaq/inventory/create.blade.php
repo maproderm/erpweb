@@ -183,7 +183,17 @@
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
-                                            <input type="text" class="form-control" name="location_product_inventory" value="" required/>
+                                            <div class="input-group flex-nowrap">
+                                                <span class="input-group-text"><i class="bi bi-truck text-warning"></i></i></span>
+                                                <div class="overflow-hidden flex-grow-1">
+                                                    <select name="location_product_inventory" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción" required>
+                                                        <option></option>
+                                                        @foreach ($data->levelarea as $levels)
+                                                        <option name="location_product_inventory" value="{{ $levels->id }}">{{ $levels->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <!--end::Input-->
                                         </div>
                                         <!--end::Input group-->

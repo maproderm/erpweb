@@ -46,11 +46,13 @@ class UserController extends Controller
 
     public function getUsers() {
 
-        $users = new UserCollection( User::all() );
+        // $users = new UserCollection( User::all() );
 
-        return response()->json([
-            'data' => $users
-        ]);
+        // return response()->json([
+        //     'data' => $users
+        // ]);
+
+        return User::get();
 
     }
     /**

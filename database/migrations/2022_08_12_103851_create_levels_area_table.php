@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('imaq_levels_area', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('division_id')->index()->nullable();
+            $table->foreign('division_id')->references('id')->on('imaq_division')->onDelete('cascade');
             $table->unsignedBigInteger('areas_section_id')->index()->nullable();
             $table->foreign('areas_section_id')->references('id')->on('imaq_areas_section')->onDelete('cascade');
             $table->string('name');
