@@ -29,16 +29,19 @@ var KTDatatablesButtons = function () {
                 targets   : 2,
                 orderable : false,
                 render    : function (data, type, row) {
-                    return `<span class="badge badge-success">${row.amount_product_inventory}</span>`;
-                    return `${row.amount_product_inventory}`;
+                    if (row.amount_product_inventory <= row.minimum_inventory) {
+                        return `<span class="badge badge-danger">${row.amount_product_inventory}</span>`;
+                    } else {
+                        return `<span class="badge badge-success">${row.amount_product_inventory}</span>`;
+                    }
                 }
             },
             {
-                //BRAND_ID
+                //LINE_ID
                 targets: 3,
-                orderable: false,
-                render: function (data, type, row) {
-                    return `${row.division.name}`;
+                className : 'dt-head-center dt-body-center',
+                render    : function (data, type, row) {
+                    return `$${Number(row.price_product_inventory).toFixed(2)}`;
                 }
             },
             {
@@ -46,12 +49,20 @@ var KTDatatablesButtons = function () {
                 targets: 4,
                 orderable: false,
                 render: function (data, type, row) {
+                    return `${row.division.name}`;
+                }
+            },
+            {
+                //BRAND_ID
+                targets: 5,
+                orderable: false,
+                render: function (data, type, row) {
                     return `${row.category.name}`;
                 }
             },
             {
                 //CATEGORY_ID
-                targets: 5,
+                targets: 6,
                 orderable: false,
                 render: function (data, type, row) {
                     return `${row.location_product_inventory}`;
@@ -59,80 +70,72 @@ var KTDatatablesButtons = function () {
             },
             {
                 //LINE_ID
-                targets: 6,
+                targets: 7,
                 render: function (data, type, row) {
                     return `<span style="text-transform:uppercase">${row.sku_product_inventory}</span>`;
                 }
             },
             {
                 //LINE_ID
-                targets: 7,
+                targets: 8,
                 render: function (data, type, row) {
                     return `<span style="text-transform:uppercase">${row.barcode_product_inventory}</span>`;
                 }
             },
             {
                 //LINE_ID
-                targets: 8,
-                render: function (data, type, row) {
-                    return `${row.provider.name}`;
-                }
-            },
-            {
-                //LINE_ID
                 targets: 9,
                 render: function (data, type, row) {
-                    return `${row.brand.name}`;
+                    return `${row.provider.name} ${row.provider.last_name}`;
                 }
             },
             {
                 //LINE_ID
                 targets: 10,
                 render: function (data, type, row) {
-                    return `${row.umedida.name}`;
+                    return `${row.brand.name}`;
                 }
             },
             {
                 //LINE_ID
                 targets: 11,
                 render: function (data, type, row) {
-                    return `${row.size_product_inventory}`;
+                    return `${row.umedida.name}`;
                 }
             },
             {
                 //LINE_ID
                 targets: 12,
                 render: function (data, type, row) {
-                    return `${row.typematerial.name}`;
+                    return `${row.size_product_inventory}`;
                 }
             },
             {
                 //LINE_ID
                 targets: 13,
                 render: function (data, type, row) {
-                    return `${row.satkeyunidad.key}`;
+                    return `${row.typematerial.name}`;
                 }
             },
             {
                 //LINE_ID
                 targets: 14,
                 render: function (data, type, row) {
-                    return `${row.key_sat_product_inventory}`;
+                    return `${row.satkeyunidad.key}`;
                 }
             },
             {
                 //LINE_ID
                 targets: 15,
                 render: function (data, type, row) {
-                    return `${row.minimum_inventory}`;
+                    return `${row.key_sat_product_inventory}`;
                 }
             },
             {
                 //LINE_ID
                 targets: 16,
-                className : 'dt-head-center dt-body-center',
-                render    : function (data, type, row) {
-                    return `$${Number(row.unit_cost_inventory).toFixed(2)}`;
+                render: function (data, type, row) {
+                    return `${row.minimum_inventory}`;
                 }
             },
             {
@@ -140,7 +143,7 @@ var KTDatatablesButtons = function () {
                 targets: 17,
                 className : 'dt-head-center dt-body-center',
                 render    : function (data, type, row) {
-                    return `$${Number(row.suggested_sale_inventory).toFixed(2)}`;
+                    return `$${Number(row.unit_cost_inventory).toFixed(2)}`;
                 }
             },
             {
@@ -148,7 +151,7 @@ var KTDatatablesButtons = function () {
                 targets: 18,
                 className : 'dt-head-center dt-body-center',
                 render    : function (data, type, row) {
-                    return `$${Number(row.price_product_inventory).toFixed(2)}`;
+                    return `$${Number(row.suggested_sale_inventory).toFixed(2)}`;
                 }
             },
             {

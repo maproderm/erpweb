@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('imaq_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->tinyInteger('status')->default(1)->comment('0: Activo 1:Inactivo');
+            $table->tinyInteger('status')->default(1)->comment('0: Inactivo 1:Activo');
             $table->unsignedBigInteger('division_id')->index()->nullable()->comment('1:AlmacenIMaQ  2:MateriaPrima 3:ProductoTerminado');
             $table->foreign('division_id')->references('id')->on('imaq_division')->onDelete('cascade');
             $table->timestamps();

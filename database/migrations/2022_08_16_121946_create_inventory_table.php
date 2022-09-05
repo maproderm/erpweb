@@ -41,7 +41,7 @@ return new class extends Migration
             $table->float('suggested_sale_inventory')->nullable();
             $table->float('price_product_inventory')->nullable();
             $table->string('description_product_inventory')->nullable();
-            $table->tinyInteger('status')->default(1);
+            $table->tinyInteger('status')->default(1)->comment('0:En Revision 1:Activo 2:Rechazado 3:Inactivo');
             $table->softDeletes();
             $table->timestamps();
         });

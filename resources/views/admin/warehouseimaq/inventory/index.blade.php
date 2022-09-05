@@ -17,20 +17,21 @@
                 </div>
                 <!--begin::Datatable-->
                 {{-- <table class="table align-middle table-row-dashed fs-6 gy-5 ajax_datatable"> --}}
-                <table id="kt_datatable_horizontal_scroll" class="table table-striped table-row-bordered gy-5 gs-7 ajax_datatable">
+                <table id="kt_datatable_horizontal_scroll" class="table align-middle table-striped table-row-bordered gy-3 gs-7 ajax_datatable">
                     <thead>
                     {{-- <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0"> --}}
                     <tr class="text-start text-dark fw-bolder fs-7 text-uppercase gs-0">
                         <th>N°</th>
-                        <th class="min-w-100px">Nombre</th>
+                        <th class="min-w-200px">Nombre</th>
                         <th>Cantidad</th>
-                        <th>División</th>
+                        <th>Precio</th>
+                        <th class="min-w-100px">División</th>
                         <th>Categoría</th>
                         <th>Ubicación</th>
                         <th>SKU</th>
-                        <th class="text-center">C. barras</th>
-                        <th>Proveedor</th>
-                        <th>Marca</th>
+                        <th>C. barras</th>
+                        <th class="min-w-200px">Proveedor</th>
+                        <th class="min-w-100px">Marca</th>
                         <th class="text-center">U Medida</th>
                         <th>Tamaño</th>
                         <th>Tipo Material</th>
@@ -39,7 +40,6 @@
                         <th>Inv. Mínimo</th>
                         <th>Costo Unit</th>
                         <th>Venta Sug</th>
-                        <th>Precio</th>
                         <th class="text-center min-w-100px">Acciones</th>
                     </tr>
                     </thead>
