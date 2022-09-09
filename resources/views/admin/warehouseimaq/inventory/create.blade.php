@@ -107,12 +107,12 @@
                                         <div class="fv-row mb-7">
                                             <!--begin::Label-->
                                             <label class="fs-6 fw-bold form-label mt-3">
-                                                <span>Cantidad</span>
+                                                <span>Cantidad (Stock Actual)</span>
                                                 <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Ingresa la cantidad existente en almacen. (Actual)"></i>
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
-                                            <input type="number" class="form-control" name="amount_product_inventory" value="" />
+                                            <input type="number" class="form-control" name="stock_inventory" value="" />
                                             <!--end::Input-->
                                         </div>
                                         <!--end::Input group-->
@@ -186,10 +186,10 @@
                                             <div class="input-group flex-nowrap">
                                                 <span class="input-group-text"><i class="bi bi-truck text-warning"></i></i></span>
                                                 <div class="overflow-hidden flex-grow-1">
-                                                    <select name="location_product_inventory" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción" required>
+                                                    <select name="level_area_id" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción" required>
                                                         <option></option>
                                                         @foreach ($data->levelarea as $levels)
-                                                        <option name="location_product_inventory" value="{{ $levels->id }}">{{ $levels->name }}</option>
+                                                        <option name="level_area_id" value="{{ $levels->id }}">{{ $levels->name }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -272,8 +272,8 @@
                                                 <div class="overflow-hidden flex-grow-1">
                                                     <select name="provider_id" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción">
                                                         <option></option>
-                                                        @foreach ($data->provider as $providers)
-                                                        <option name="division_id" value="{{ $providers->id }}">{{ $providers->user_id }}</option>
+                                                        @foreach ($data->user as $providers)
+                                                        <option name="division_id" value="{{ $providers->id }}">{{ $providers->name }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -353,7 +353,17 @@
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
-                                            <input type="text" class="form-control" name="size_product_inventory" value="" required/>
+                                            <div class="input-group flex-nowrap">
+                                                {{-- <span class="input-group-text"><i class="bi bi-truck text-warning"></i></i></span> --}}
+                                                <div class="overflow-hidden flex-grow-1">
+                                                    <select name="size_product_inventory" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción" required>
+                                                        <option></option>
+                                                        @foreach ($data->size as $sizes)
+                                                        <option name="size_product_inventory" value="{{ $sizes->id }}">{{ $sizes->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <!--end::Input-->
                                         </div>
                                         <!--end::Input group-->
@@ -388,7 +398,7 @@
                                 </div>
                                 <!--end::Row-->
                                 <!--begin::Row-->
-                                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+                                {{-- <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
                                     <!--begin::Col-->
                                     <div class="col">
                                         <!--begin::Input group-->
@@ -441,7 +451,7 @@
                                         <!--end::Input group-->
                                     </div>
                                     <!--end::Col-->
-                                </div>
+                                </div> --}}
                                 <!--end::Row-->
                                 <!--begin::Row-->
                                 <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
@@ -473,7 +483,7 @@
                                             <!--begin::Input-->
                                             <div class="input-group mb-5">
                                                 <span class="input-group-text">$</span>
-                                                <input type="number" class="form-control" name="unit_cost_inventory" value="" required/>
+                                                <input id="number" type="number" class="form-control" name="unit_cost_inventory" step=".01" value="" required/>
                                             </div>
                                             <!--end::Input-->
                                         </div>
@@ -485,7 +495,7 @@
                                 <!--begin::Row-->
                                 <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
                                     <!--begin::Col-->
-                                    <div class="col">
+                                    {{-- <div class="col">
                                         <!--begin::Input group-->
                                         <div class="fv-row mb-5">
                                             <!--begin::Label-->
@@ -498,7 +508,7 @@
                                             <!--end::Input-->
                                         </div>
                                         <!--end::Input group-->
-                                    </div>
+                                    </div> --}}
                                     <!--end::Col-->
                                     <!--begin::Col-->
                                     <div class="col">
@@ -512,7 +522,7 @@
                                             <!--begin::Input-->
                                             <div class="input-group mb-5">
                                                 <span class="input-group-text">$</span>
-                                                <input type="number" class="form-control" name="price_product_inventory" value="" required/>
+                                                <input id="number" type="number" class="form-control" step=".01" name="price_product_inventory" value="" disabled/>
                                             </div>
                                             <!--end::Input-->
                                         </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Warehouseimaq\Inventory;
 
 use App\Models\Rol;
 use App\Models\User;
+use App\Models\Imaqsize;
 use App\Models\Imaqbrand;
 use App\Models\Inventory;
 use App\Models\Imaqumedida;
@@ -32,6 +33,12 @@ class InventoryController extends Controller
         return view('admin.warehouseimaq.inventory.index');
     }
 
+    public function revise()
+    {
+        //
+        return view('admin.warehouseimaq.inventory.revise');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -51,6 +58,7 @@ class InventoryController extends Controller
         $data->productsat   = Imaqproductsat::all();
         $data->typematerial = Imaqtypematerial::all();
         $data->satunidadkey = Imaqsatunidadkey::all();
+        $data->size         = Imaqsize::all();
         return view('admin.warehouseimaq.inventory.create', compact('data'));
     }
 
@@ -66,7 +74,7 @@ class InventoryController extends Controller
         // dd($request);
         $rules = [
             'name_product_inventory'        => ['required', 'string', 'max:255'],
-            'amount_product_inventory'      => ['string'],
+            // 'stock_inventory'               => ['string'],
             'division_id'                   => ['required'],
         ];
         $messages = [
@@ -76,10 +84,10 @@ class InventoryController extends Controller
 
         $event = Inventory::create([
             'name_product_inventory'        => $request->name_product_inventory,
-            'amount_product_inventory'      => $request->amount_product_inventory,
+            'stock_inventory'               => $request->stock_inventory,
             'division_id'                   => $request->division_id,
             'category_id'                   => $request->category_id,
-            'location_product_inventory'    => $request->location_product_inventory,
+            'level_area_id'                 => $request->level_area_id,
             'sku_product_inventory'         => $request->sku_product_inventory,
             'barcode_product_inventory'     => $request->barcode_product_inventory,
             'provider_id'                   => $request->provider_id,
@@ -87,13 +95,12 @@ class InventoryController extends Controller
             'unit_of_measurement_id'        => $request->unit_of_measurement_id,
             'size_product_inventory'        => $request->size_product_inventory,
             'type_of_material_id'           => $request->type_of_material_id,
-            'key_sat_unit_inventory'        => $request->key_sat_unit_inventory,
-            'key_sat_unit_inventory'        => $request->key_sat_unit_inventory,
-            'key_sat_product_inventory'     => $request->key_sat_product_inventory,
+            'key_sat_unit_inventory'        => 1,
+            'key_sat_product_inventory'     => 1,
             'minimum_inventory'             => $request->minimum_inventory,
             'unit_cost_inventory'           => $request->unit_cost_inventory,
-            'suggested_sale_inventory'      => $request->suggested_sale_inventory,
-            'price_product_inventory'       => $request->price_product_inventory,
+            // 'suggested_sale_inventory'      => $request->suggested_sale_inventory,
+            // 'price_product_inventory'       => $request->price_product_inventory,
             'description_product_inventory' => $request->description_product_inventory,
             'status'                        => 0,
         ]);
@@ -120,7 +127,7 @@ class InventoryController extends Controller
     // }
     public function getProducts() {
         $request = request();
-        $inventory   = Inventory::with(['category','division','provider','brand','umedida','typematerial','satkeyunidad']);
+        $inventory   = Inventory::with(['category','division','provider','brand','umedida','typematerial','satkeyunidad', 'levelarea', 'size']);
         return $inventory->where('status', 0)->get();
     }
     /**

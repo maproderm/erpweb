@@ -18,10 +18,10 @@ class Inventory extends Model
      */
     protected $fillable = [
         'name_product_inventory',
-        'amount_product_inventory',
+        'stock_inventory',
         'division_id',
         'category_id',
-        'location_product_inventory',
+        'level_area_id',
         'sku_product_inventory',
         'barcode_product_inventory',
         'provider_id',
@@ -65,6 +65,14 @@ class Inventory extends Model
 
     public function satkeyunidad() {
         return $this->belongsTo('App\Models\Imaqsatunidadkey', 'key_sat_unit_inventory', 'id');
+    }
+
+    public function levelarea() {
+        return $this->belongsTo('App\Models\Imaqlevelarea', 'level_area_id', 'id');
+    }
+
+    public function size() {
+        return $this->belongsTo('App\Models\Imaqsize', 'size_product_inventory', 'id');
     }
 
 }

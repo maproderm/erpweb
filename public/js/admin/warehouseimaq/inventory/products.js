@@ -29,10 +29,12 @@ var KTDatatablesButtons = function () {
                 targets   : 2,
                 orderable : false,
                 render    : function (data, type, row) {
-                    if (row.amount_product_inventory <= row.minimum_inventory) {
-                        return `<span class="badge badge-danger">${row.amount_product_inventory}</span>`;
+                    if(row.stock_inventory < row.minimum_inventory){
+                        return `<span class="badge badge-danger">${row.stock_inventory}</span>`;
+                    }if (row.stock_inventory == row.minimum_inventory){
+                        return `<span class="badge badge-warning">${row.stock_inventory}</span>`;
                     } else {
-                        return `<span class="badge badge-success">${row.amount_product_inventory}</span>`;
+                        return `<span class="badge badge-success">${row.stock_inventory}</span>`;
                     }
                 }
             },
@@ -65,7 +67,7 @@ var KTDatatablesButtons = function () {
                 targets: 6,
                 orderable: false,
                 render: function (data, type, row) {
-                    return `${row.location_product_inventory}`;
+                    return `${row.levelarea.name}`;
                 }
             },
             {
@@ -79,13 +81,18 @@ var KTDatatablesButtons = function () {
                 //LINE_ID
                 targets: 8,
                 render: function (data, type, row) {
-                    return `<span style="text-transform:uppercase">${row.barcode_product_inventory}</span>`;
+                    if (row.barcode_product_inventory == null) {
+                        return `<span class="badge badge-light-danger">--</span>`;
+                    } else {
+                        return `<span style="text-transform:uppercase">${row.barcode_product_inventory}</span>`;
+                    }
                 }
             },
             {
                 //LINE_ID
                 targets: 9,
                 render: function (data, type, row) {
+                    // return `${row.id}`;
                     return `${row.provider.name} ${row.provider.last_name}`;
                 }
             },
@@ -107,7 +114,7 @@ var KTDatatablesButtons = function () {
                 //LINE_ID
                 targets: 12,
                 render: function (data, type, row) {
-                    return `${row.size_product_inventory}`;
+                    return `${row.size.name}`;
                 }
             },
             {

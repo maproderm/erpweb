@@ -59,24 +59,24 @@
                 <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 pt-1">
                     <!--begin::Item-->
                     <li class="breadcrumb-item text-muted">
-                        <a href="../../demo8/dist/index.html" class="text-muted text-hover-primary">Home</a>
+                        <a href="https://industrialmaquiladora.com/" target="_branck" class="text-muted text-hover-primary">www.industrialmaquiladora.com</a>
                     </li>
                     <!--end::Item-->
                     <!--begin::Item-->
-                    <li class="breadcrumb-item">
+                    {{-- <li class="breadcrumb-item">
                         <span class="bullet bg-gray-200 w-5px h-2px"></span>
-                    </li>
+                    </li> --}}
                     <!--end::Item-->
                     <!--begin::Item-->
-                    <li class="breadcrumb-item text-muted">Dashboards</li>
+                    {{-- <li class="breadcrumb-item text-muted">Dashboards</li> --}}
                     <!--end::Item-->
                     <!--begin::Item-->
-                    <li class="breadcrumb-item">
+                    {{-- <li class="breadcrumb-item">
                         <span class="bullet bg-gray-200 w-5px h-2px"></span>
-                    </li>
+                    </li> --}}
                     <!--end::Item-->
                     <!--begin::Item-->
-                    <li class="breadcrumb-item text-dark">Default</li>
+                    {{-- <li class="breadcrumb-item text-dark">Default</li> --}}
                     <!--end::Item-->
                 </ul>
                 <!--end::Breadcrumb-->

@@ -50,11 +50,27 @@ class UserSeeder extends Seeder
         $serigrafia->assignRole('serigrafia');
 
         $provider = User::create([
+            'name'      => 'Imaq',
+            'last_name' => 'Industrial Maquiladora',
+            'email'     => 'contacto@industrialmaquiladora.com',
+            'password'  => Hash::make('Superadmin2022'),
+        ]);
+        $provider->assignRole('provider');
+
+        $provider_second = User::create([
             'name'      => 'Proveedor',
             'last_name' => 'Prueba',
             'email'     => 'proveedor@mail.com',
             'password'  => Hash::make('Superadmin2022'),
         ]);
-        $provider->assignRole('provider');
+        $provider_second->assignRole('provider');
+
+        $sales = User::create([
+            'name'      => 'Ventas',
+            'last_name' => 'Maproderm',
+            'email'     => 'ventas@mail.com',
+            'password'  => Hash::make('Superadmin2022'),
+        ]);
+        $sales->assignRole('sales');
     }
 }

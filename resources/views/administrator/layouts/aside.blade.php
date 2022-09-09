@@ -937,7 +937,7 @@
                 </div>
                 <!--end:Menu item-->
                 <!--begin:Menu item-->
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ setOpen('inventory') }}">
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ setOpen('products') }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
                         <span class="menu-icon">
@@ -958,7 +958,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{ setActive('view-inventory') }}" href="{{ route('view-inventory') }}">
+                            <a class="menu-link {{ setActive('products.index') }}" href="{{ route('products.index') }}">
                             {{-- <a class="menu-link" href="{{ route('view-inventory') }}"> --}}
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
@@ -971,7 +971,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{ setActive('create-inventory') }}" href="{{ route('create-inventory') }}">
+                            <a class="menu-link {{ setActive('products.create') }}" href="{{ route('products.create') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -983,7 +983,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/pages/user-profile/campaigns.html">
+                            <a class="menu-link {{ setActive('products.revise') }}" href="{{ route('products.revise') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -997,7 +997,7 @@
                 </div>
                 <!--end:Menu item-->
                 <!--begin:Menu item-->
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ setOpen('orders') }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
                         <span class="menu-icon">
@@ -1027,7 +1027,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/account/settings.html">
+                            <a class="menu-link {{ setActive('orders.create') }}" href="{{ route('orders.create') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -1132,7 +1132,7 @@
                 </div>
                 <!--end:Menu item-->
                 <!--begin:Menu item-->
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ setOpen('brands') }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
                         <span class="menu-icon">
@@ -2574,7 +2574,7 @@
                 {{-- TERMINA SERIGRAFIA --}}
 
                 {{-- INICIA VENTAS --}}
-                @hasanyrole('developer|ventas')
+                @hasanyrole('developer|sales')
                 <!--begin:Menu item-->
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->
@@ -2589,16 +2589,11 @@
                     <!--begin:Menu link-->
                     <span class="menu-link">
                         <span class="menu-icon">
-                            <!--begin::Svg Icon | path: icons/duotune/abstract/abs042.svg-->
-                            <span class="svg-icon svg-icon-2">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M18 21.6C16.6 20.4 9.1 20.3 6.3 21.2C5.7 21.4 5.1 21.2 4.7 20.8L2 18C4.2 15.8 10.8 15.1 15.8 15.8C16.2 18.3 17 20.5 18 21.6ZM18.8 2.8C18.4 2.4 17.8 2.20001 17.2 2.40001C14.4 3.30001 6.9 3.2 5.5 2C6.8 3.3 7.4 5.5 7.7 7.7C9 7.9 10.3 8 11.7 8C15.8 8 19.8 7.2 21.5 5.5L18.8 2.8Z" fill="currentColor" />
-                                    <path opacity="0.3" d="M21.2 17.3C21.4 17.9 21.2 18.5 20.8 18.9L18 21.6C15.8 19.4 15.1 12.8 15.8 7.8C18.3 7.4 20.4 6.70001 21.5 5.60001C20.4 7.00001 20.2 14.5 21.2 17.3ZM8 11.7C8 9 7.7 4.2 5.5 2L2.8 4.8C2.4 5.2 2.2 5.80001 2.4 6.40001C2.7 7.40001 3.00001 9.2 3.10001 11.7C3.10001 15.5 2.40001 17.6 2.10001 18C3.20001 16.9 5.3 16.2 7.8 15.8C8 14.2 8 12.7 8 11.7Z" fill="currentColor" />
-                                </svg>
-                            </span>
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen022.svg-->
+                            <i class="bi bi-clipboard-heart fs-3"></i>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Projects</span>
+                        <span class="menu-title">Pedidos</span>
                         <span class="menu-arrow"></span>
                     </span>
                     <!--end:Menu link-->
@@ -2611,7 +2606,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">My Projects</span>
+                                <span class="menu-title">Mis pedidos</span>
                             </a>
                             <!--end:Menu link-->
                         </div>
@@ -2623,79 +2618,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">View Project</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>
-                        <!--end:Menu item-->
-                        <!--begin:Menu item-->
-                        <div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/apps/projects/targets.html">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Targets</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>
-                        <!--end:Menu item-->
-                        <!--begin:Menu item-->
-                        <div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/apps/projects/budget.html">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Budget</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>
-                        <!--end:Menu item-->
-                        <!--begin:Menu item-->
-                        <div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/apps/projects/users.html">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Users</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>
-                        <!--end:Menu item-->
-                        <!--begin:Menu item-->
-                        <div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/apps/projects/files.html">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Files</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>
-                        <!--end:Menu item-->
-                        <!--begin:Menu item-->
-                        <div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/apps/projects/activity.html">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Activity</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>
-                        <!--end:Menu item-->
-                        <!--begin:Menu item-->
-                        <div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/apps/projects/settings.html">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Settings</span>
+                                <span class="menu-title">Cotizaciones</span>
                             </a>
                             <!--end:Menu link-->
                         </div>
@@ -2709,302 +2632,111 @@
                     <!--begin:Menu link-->
                     <span class="menu-link">
                         <span class="menu-icon">
-                            <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm002.svg-->
-                            <span class="svg-icon svg-icon-2">
+                            <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/kt-products/metronic/releases/2022-07-14-092914/core/html/src/media/icons/duotune/general/gen001.svg-->
+                            <span class="svg-icon svg-icon-2 svg-icon-success">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M21 10H13V11C13 11.6 12.6 12 12 12C11.4 12 11 11.6 11 11V10H3C2.4 10 2 10.4 2 11V13H22V11C22 10.4 21.6 10 21 10Z" fill="currentColor" />
-                                    <path opacity="0.3" d="M12 12C11.4 12 11 11.6 11 11V3C11 2.4 11.4 2 12 2C12.6 2 13 2.4 13 3V11C13 11.6 12.6 12 12 12Z" fill="currentColor" />
-                                    <path opacity="0.3" d="M18.1 21H5.9C5.4 21 4.9 20.6 4.8 20.1L3 13H21L19.2 20.1C19.1 20.6 18.6 21 18.1 21ZM13 18V15C13 14.4 12.6 14 12 14C11.4 14 11 14.4 11 15V18C11 18.6 11.4 19 12 19C12.6 19 13 18.6 13 18ZM17 18V15C17 14.4 16.6 14 16 14C15.4 14 15 14.4 15 15V18C15 18.6 15.4 19 16 19C16.6 19 17 18.6 17 18ZM9 18V15C9 14.4 8.6 14 8 14C7.4 14 7 14.4 7 15V18C7 18.6 7.4 19 8 19C8.6 19 9 18.6 9 18Z" fill="currentColor" />
+                                <path d="M11 2.375L2 9.575V20.575C2 21.175 2.4 21.575 3 21.575H9C9.6 21.575 10 21.175 10 20.575V14.575C10 13.975 10.4 13.575 11 13.575H13C13.6 13.575 14 13.975 14 14.575V20.575C14 21.175 14.4 21.575 15 21.575H21C21.6 21.575 22 21.175 22 20.575V9.575L13 2.375C12.4 1.875 11.6 1.875 11 2.375Z" fill="currentColor"/>
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">eCommerce</span>
+                        <span class="menu-title">Inventario</span>
                         <span class="menu-arrow"></span>
                     </span>
                     <!--end:Menu link-->
                     <!--begin:Menu sub-->
                     <div class="menu-sub menu-sub-accordion">
                         <!--begin:Menu item-->
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <div class="menu-item">
                             <!--begin:Menu link-->
-                            <span class="menu-link">
+                            <a class="menu-link" href="../../demo8/dist/apps/projects/list.html">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Catalog</span>
-                                <span class="menu-arrow"></span>
-                            </span>
+                                <span class="menu-title">Productos</span>
+                            </a>
                             <!--end:Menu link-->
-                            <!--begin:Menu sub-->
-                            <div class="menu-sub menu-sub-accordion">
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/catalog/products.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Products</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/catalog/categories.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Categories</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/catalog/add-product.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Add Product</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/catalog/edit-product.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Edit Product</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/catalog/add-category.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Add Category</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/catalog/edit-category.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Edit Category</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                            </div>
-                            <!--end:Menu sub-->
-                        </div>
-                        <!--end:Menu item-->
-                        <!--begin:Menu item-->
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <!--begin:Menu link-->
-                            <span class="menu-link">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Sales</span>
-                                <span class="menu-arrow"></span>
-                            </span>
-                            <!--end:Menu link-->
-                            <!--begin:Menu sub-->
-                            <div class="menu-sub menu-sub-accordion">
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/sales/listing.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Orders Listing</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/sales/details.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Order Details</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/sales/add-order.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Add Order</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/sales/edit-order.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Edit Order</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                            </div>
-                            <!--end:Menu sub-->
-                        </div>
-                        <!--end:Menu item-->
-                        <!--begin:Menu item-->
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <!--begin:Menu link-->
-                            <span class="menu-link">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Customers1</span>
-                                <span class="menu-arrow"></span>
-                            </span>
-                            <!--end:Menu link-->
-                            <!--begin:Menu sub-->
-                            <div class="menu-sub menu-sub-accordion">
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/customers/listing.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Customer Listing</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/customers/details.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Customer Details</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                            </div>
-                            <!--end:Menu sub-->
-                        </div>
-                        <!--end:Menu item-->
-                        <!--begin:Menu item-->
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <!--begin:Menu link-->
-                            <span class="menu-link">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Reports</span>
-                                <span class="menu-arrow"></span>
-                            </span>
-                            <!--end:Menu link-->
-                            <!--begin:Menu sub-->
-                            <div class="menu-sub menu-sub-accordion">
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/reports/view.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Products Viewed</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/reports/sales.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Sales</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/reports/returns.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Returns</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/reports/customer-orders.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Customer Orders</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo8/dist/apps/ecommerce/reports/shipping.html">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">Shipping</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-                            </div>
-                            <!--end:Menu sub-->
                         </div>
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/apps/ecommerce/settings.html">
+                            <a class="menu-link" href="../../demo8/dist/apps/projects/project.html">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Settings</span>
+                                <span class="menu-title">Agregar producto</span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--end:Menu item-->
+                    </div>
+                    <!--end:Menu sub-->
+                </div>
+                <!--end:Menu item-->
+                <!--begin:Menu item-->
+                <div class="menu-item">
+                    <!--begin:Menu link-->
+                    <a class="menu-link {{ setActive('view-user') }}" href="{{ route('view-user') }}">
+                        <span class="menu-icon">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
+                            {{-- <i class="bi bi-fingerprint fs-3"></i> --}}
+                            <i class="bi bi-people-fill fs-3"></i>
+                            <!--end::Svg Icon-->
+                        </span>
+                        <span class="menu-title">Clientes</span>
+                    </a>
+                    <!--end:Menu link-->
+                </div>
+                <!--end:Menu item-->
+                <!--begin:Menu item-->
+                <div class="menu-item">
+                    <!--begin:Menu link-->
+                    <a class="menu-link {{ setActive('view-user') }}" href="{{ route('view-user') }}">
+                        <span class="menu-icon">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
+                            {{-- <i class="bi bi-fingerprint fs-3"></i> --}}
+                            <i class="bi bi-person-workspace fs-3"></i>
+                            <!--end::Svg Icon-->
+                        </span>
+                        <span class="menu-title">Distribuidores</span>
+                    </a>
+                    <!--end:Menu link-->
+                </div>
+                <!--end:Menu item-->
+                <!--begin:Menu item-->
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                    <!--begin:Menu link-->
+                    <span class="menu-link">
+                        <span class="menu-icon">
+                            <i class="bi bi-gear-wide-connected fs-3"></i>
+                        </span>
+                        <span class="menu-title">Configuraciones</span>
+                        <span class="menu-arrow"></span>
+                    </span>
+                    <!--end:Menu link-->
+                    <!--begin:Menu sub-->
+                    <div class="menu-sub menu-sub-accordion">
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link" href="../../demo8/dist/apps/projects/list.html">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Categorías</span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--end:Menu item-->
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link" href="../../demo8/dist/apps/projects/project.html">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Marcas</span>
                             </a>
                             <!--end:Menu link-->
                         </div>

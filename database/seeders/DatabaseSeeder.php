@@ -34,6 +34,8 @@ class DatabaseSeeder extends Seeder
             ProductsatSeeder::class,
             AreasSectionSeeder::class,
             LevelsAreaSeeder::class,
+            SizeSeeder::class,
+            ProductsSeeder::class,
         ]);
     }
 }
