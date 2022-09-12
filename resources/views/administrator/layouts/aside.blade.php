@@ -2585,6 +2585,21 @@
                 </div>
                 <!--end:Menu item-->
                 <!--begin:Menu item-->
+                <div class="menu-item">
+                    <!--begin:Menu link-->
+                    <a class="menu-link" href="{{ route('view-user') }}">
+                        <span class="menu-icon">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
+                            {{-- <i class="bi bi-fingerprint fs-3"></i> --}}
+                            <i class="bi bi-cart-plus-fill fs-3"></i>
+                            <!--end::Svg Icon-->
+                        </span>
+                        <span class="menu-title">Ventas</span>
+                    </a>
+                    <!--end:Menu link-->
+                </div>
+                <!--end:Menu item-->
+                <!--begin:Menu item-->
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                     <!--begin:Menu link-->
                     <span class="menu-link">
@@ -2649,7 +2664,8 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/apps/projects/list.html">
+                            {{-- <a class="menu-link" href="../../demo8/dist/apps/projects/list.html"> --}}
+                            <a class="menu-link {{ setActive('products.mapro.index') }}" href="{{ route('products.mapro.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -2677,7 +2693,7 @@
                 <!--begin:Menu item-->
                 <div class="menu-item">
                     <!--begin:Menu link-->
-                    <a class="menu-link {{ setActive('view-user') }}" href="{{ route('view-user') }}">
+                    <a class="menu-link" href="{{ route('view-user') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
                             {{-- <i class="bi bi-fingerprint fs-3"></i> --}}
@@ -2692,7 +2708,7 @@
                 <!--begin:Menu item-->
                 <div class="menu-item">
                     <!--begin:Menu link-->
-                    <a class="menu-link {{ setActive('view-user') }}" href="{{ route('view-user') }}">
+                    <a class="menu-link" href="{{ route('view-user') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
                             {{-- <i class="bi bi-fingerprint fs-3"></i> --}}

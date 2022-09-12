@@ -1,5 +1,5 @@
 @extends('administrator.index')
-@section('title','Usuarios | Crear Usuario')
+@section('title','Usuarios | IMAQ')
 @section('content')
 <div class="d-flex flex-column-fluid">
     <div class="container-fluid">

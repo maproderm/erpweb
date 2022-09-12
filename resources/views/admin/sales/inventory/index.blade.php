@@ -1,5 +1,5 @@
 @extends('administrator.index')
-@section('title','Aprobación Productos | IMAQ')
+@section('title','Inventario | IMAQ')
 @section('content')
 <div class="d-flex flex-column-fluid">
     <div class="container-fluid">
@@ -32,14 +32,11 @@
                         <th>C. barras</th>
                         <th class="min-w-200px">Proveedor</th>
                         <th class="min-w-100px">Marca</th>
-                        <th class="text-center">U Medida</th>
                         <th>Tamaño</th>
                         <th>Tipo Material</th>
                         <th>U. SAT</th>
                         <th>P. SAT</th>
                         <th>Inv. Mínimo</th>
-                        <th>Costo Unit</th>
-                        {{-- <th>Venta Sug</th> --}}
                         <th class="text-center min-w-100px">Acciones</th>
                     </tr>
                     </thead>
@@ -53,5 +50,6 @@
 </div>
 @endsection
 @push('scripts')
-    <script type="text/javascript" src="{{  URL::asset ('js/admin/warehouseimaq/inventory/products-revise.js?v='.rand())  }}"></script>
+    <script type="text/javascript" src="{{  URL::asset ('js/admin/sales/inventory/products.js?v='.rand())  }}"></script>
 @endpush
+

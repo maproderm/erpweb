@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreign('division_id')->references('id')->on('imaq_division')->onDelete('cascade');
             $table->unsignedBigInteger('category_id')->index();
             $table->foreign('category_id')->references('id')->on('imaq_categories')->onDelete('cascade');
-            $table->unsignedBigInteger('level_area_id')->index();
+            $table->unsignedBigInteger('level_area_id')->index()->nullable();
             $table->foreign('level_area_id')->references('id')->on('imaq_levels_area')->onDelete('cascade');
             $table->string('sku_product_inventory')->unique()->nullable();
             $table->string('barcode_product_inventory')->unique()->nullable();
@@ -37,7 +37,8 @@ return new class extends Migration
             $table->foreign('type_of_material_id')->references('id')->on('imaq_type_of_material')->onDelete('cascade');
             $table->unsignedBigInteger('key_sat_unit_inventory')->index()->nullable();
             $table->foreign('key_sat_unit_inventory')->references('id')->on('imaq_sat_key_u')->onDelete('cascade');
-            $table->string('key_sat_product_inventory')->nullable();
+            $table->unsignedBigInteger('key_sat_product_inventory')->index()->nullable();
+            $table->foreign('key_sat_product_inventory')->references('id')->on('sat_clase')->onDelete('cascade');
             $table->string('minimum_inventory')->nullable();
             $table->float('unit_cost_inventory')->nullable();
             $table->float('suggested_sale_inventory')->nullable();

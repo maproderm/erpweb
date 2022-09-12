@@ -16,7 +16,7 @@ class BrandSeeder extends Seeder
     public function run()
     {
         DB::table('imaq_brands')->insert([
-            'name'=>'Marca 1',
+            'name'=>'MaProDerm',
             'description'=>'Descripcion de marca 1'
         ] );
 

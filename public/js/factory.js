@@ -11,6 +11,7 @@ const factoryNixDit = function(){
             order       : [[0, 'asc']],
             stateSave   : false,
             responsive  : false,
+            select      : true,
             ajax        : {
                 url     : url_request,
                 method  : 'GET',
@@ -142,14 +143,14 @@ const factoryNixDit = function(){
                 "select": {
                     "1": "%d fila seleccionada",
                     "_": "%d filas seleccionadas",
-                    "cells": {
-                        "1": "1 celda seleccionada",
-                        "_": "$d celdas seleccionadas"
-                    },
-                    "columns": {
-                        "1": "1 columna seleccionada",
-                        "_": "%d columnas seleccionadas"
-                    },
+                    // "cells": {
+                    //     "1": "1 celda seleccionada",
+                    //     "_": "$d celdas seleccionadas"
+                    // },
+                    // "columns": {
+                    //     "1": "1 columna seleccionada",
+                    //     "_": "%d columnas seleccionadas"
+                    // },
                     "rows": {
                         "1": "1 fila seleccionada",
                         "_": "%d filas seleccionadas"

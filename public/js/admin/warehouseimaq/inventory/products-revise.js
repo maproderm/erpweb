@@ -6,7 +6,7 @@ var KTDatatablesButtons = function () {
     var datatable;
     // Private functions
     var initDatatable = function () {
-        let url     = `${HOST_URL}/products/get-general-all`;
+        let url     = `${HOST_URL}/products/get-revise-all`;
         let columns = [
             {   //ID
                 targets   : 0,

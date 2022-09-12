@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Warehouseimaq\Inventory;
+namespace App\Http\Controllers\Sales\Inventory;
 
 use App\Models\Rol;
 use App\Models\User;
@@ -20,7 +20,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Session;
 
-class InventoryController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -30,7 +30,7 @@ class InventoryController extends Controller
     public function index()
     {
         //
-        return view('admin.warehouseimaq.inventory.index');
+        return view('admin.sales.inventory.index');
     }
 
     public function revise()
@@ -125,16 +125,11 @@ class InventoryController extends Controller
     //     ]);
 
     // }
-    public function getProducts() {
+    public function getProductsMapro() {
         $request = request();
-        $inventory   = Inventory::with(['category','division','provider','brand','umedida','typematerial','satkeyunidad', 'levelarea', 'size', 'clasesat']);
-        return $inventory->where('status', 1)->where('division_id', 1)->get();
-    }
-
-    public function getProductsRevision() {
-        $request = request();
-        $inventory   = Inventory::with(['category','division','provider','brand','umedida','typematerial','satkeyunidad', 'levelarea', 'size', 'clasesat']);
-        return $inventory->where('status', 0)->where('division_id', 1)->get();
+        // $inventory   = Inventory::with(['category','division','provider','brand','umedida','typematerial','satkeyunidad', 'levelarea', 'size', 'clasesat']);
+        $inventory   = Inventory::all();
+        return $inventory->where('status', 1)->get();
     }
     /**
      * Display the specified resource.

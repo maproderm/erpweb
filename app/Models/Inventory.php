@@ -75,4 +75,8 @@ class Inventory extends Model
         return $this->belongsTo('App\Models\Imaqsize', 'size_product_inventory', 'id');
     }
 
+    public function clasesat() {
+        return $this->belongsTo('App\Models\Imaqproductsat', 'key_sat_product_inventory', 'id');
+    }
+
 }

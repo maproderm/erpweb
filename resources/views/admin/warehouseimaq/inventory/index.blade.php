@@ -39,7 +39,7 @@
                         <th>P. SAT</th>
                         <th>Inv. Mínimo</th>
                         <th>Costo Unit</th>
-                        <th>Venta Sug</th>
+                        {{-- <th>Venta Sug</th> --}}
                         <th class="text-center min-w-100px">Acciones</th>
                     </tr>
                     </thead>

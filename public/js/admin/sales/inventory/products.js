@@ -6,7 +6,7 @@ var KTDatatablesButtons = function () {
     var datatable;
     // Private functions
     var initDatatable = function () {
-        let url     = `${HOST_URL}/products/get-general-all`;
+        let url     = `${HOST_URL}/products/get-maproderm-all`;
         let columns = [
             {   //ID
                 targets   : 0,
@@ -25,7 +25,7 @@ var KTDatatablesButtons = function () {
                 }
             },
             {
-                //CODE
+                //CANTIDAD
                 targets   : 2,
                 orderable : false,
                 render    : function (data, type, row) {
@@ -39,7 +39,7 @@ var KTDatatablesButtons = function () {
                 }
             },
             {
-                //LINE_ID
+                //PRECIO
                 targets: 3,
                 className : 'dt-head-center dt-body-center',
                 render    : function (data, type, row) {
@@ -47,7 +47,7 @@ var KTDatatablesButtons = function () {
                 }
             },
             {
-                //BRAND_ID
+                //DIVISION
                 targets: 4,
                 orderable: false,
                 render: function (data, type, row) {
@@ -55,7 +55,7 @@ var KTDatatablesButtons = function () {
                 }
             },
             {
-                //BRAND_ID
+                //CATEGORIA
                 targets: 5,
                 orderable: false,
                 render: function (data, type, row) {
@@ -63,7 +63,7 @@ var KTDatatablesButtons = function () {
                 }
             },
             {
-                //CATEGORY_ID
+                //UBICACION
                 targets: 6,
                 orderable: false,
                 render: function (data, type, row) {
@@ -75,14 +75,14 @@ var KTDatatablesButtons = function () {
                 }
             },
             {
-                //LINE_ID
+                //SKU
                 targets: 7,
                 render: function (data, type, row) {
                     return `<span style="text-transform:uppercase">${row.sku_product_inventory}</span>`;
                 }
             },
             {
-                //LINE_ID
+                //CODIGO DE BARRAS
                 targets: 8,
                 render: function (data, type, row) {
                     if (row.barcode_product_inventory == null) {
@@ -93,7 +93,7 @@ var KTDatatablesButtons = function () {
                 }
             },
             {
-                //LINE_ID
+                //PROVEEDORES
                 targets: 9,
                 render: function (data, type, row) {
                     // return `${row.id}`;
@@ -101,29 +101,29 @@ var KTDatatablesButtons = function () {
                 }
             },
             {
-                //LINE_ID
+                //MARCA
                 targets: 10,
                 render: function (data, type, row) {
                     return `${row.brand.name}`;
                 }
             },
+            // {
+            //     //LINE_ID
+            //     targets: 11,
+            //     render: function (data, type, row) {
+            //         return `${row.umedida.name}`;
+            //     }
+            // },
             {
-                //LINE_ID
+                //TAMAÑO
                 targets: 11,
-                render: function (data, type, row) {
-                    return `${row.umedida.name}`;
-                }
-            },
-            {
-                //LINE_ID
-                targets: 12,
                 render: function (data, type, row) {
                     return `${row.size.name}`;
                 }
             },
             {
-                //LINE_ID
-                targets: 13,
+                //TIPO MATERIAL
+                targets: 12,
                 render: function (data, type, row) {
                     if (row.typematerial == null) {
                         return `<span class="badge badge-light-danger">--</span>`;
@@ -134,45 +134,37 @@ var KTDatatablesButtons = function () {
                 }
             },
             {
-                //LINE_ID
-                targets: 14,
+                //U SAT
+                targets: 13,
                 render: function (data, type, row) {
                     return `${row.satkeyunidad.key}`;
                 }
             },
             {
-                //LINE_ID
-                targets: 15,
+                //P SAT
+                targets: 14,
                 render: function (data, type, row) {
                     return `${row.clasesat.key}`;
                 }
             },
             {
                 //LINE_ID
-                targets: 16,
+                targets: 15,
                 render: function (data, type, row) {
                     return `${row.minimum_inventory}`;
                 }
             },
-            {
-                //LINE_ID
-                targets: 17,
-                className : 'dt-head-center dt-body-center',
-                render    : function (data, type, row) {
-                    return `$${Number(row.unit_cost_inventory).toFixed(2)}`;
-                }
-            },
             // {
-            //     //LINE_ID
-            //     targets: 18,
+            //     //INVENTARIO MINIMO
+            //     targets: 17,
             //     className : 'dt-head-center dt-body-center',
             //     render    : function (data, type, row) {
-            //         return `$${Number(row.suggested_sale_inventory).toFixed(2)}`;
+            //         return `$${Number(row.unit_cost_inventory).toFixed(2)}`;
             //     }
             // },
             {
                 //ACCIONES
-                targets: 18,
+                targets: 16,
                 data: null,
                 orderable: false,
                 className: 'text-end',
