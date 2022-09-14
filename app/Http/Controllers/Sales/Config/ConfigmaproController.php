@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Sales\Client;
-use App\Models\User;
+namespace App\Http\Controllers\Sales\Config;
+use App\Models\Imaqbrand;
+use App\Models\Imaqcategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ClientController extends Controller
+class ConfigmaproController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,32 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return view('admin.sales.clients.index');
+        // return view('admin.sales.pedidos.index');
+    }
+
+    public function categories()
+    {
+        return view('admin.sales.config.categories');
+    }
+
+    public function brands()
+    {
+        return view('admin.sales.config.brands');
+    }
+
+    public function getCategories() {
+
+        // return Imaqcategory::get();
+        $request = request();
+        $inventory   = Imaqcategory::with(['division']);
+        return $inventory->get();
+
+    }
+
+    public function getBrands() {
+
+        return Imaqbrand::get();
+
     }
 
     /**
@@ -24,7 +50,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        // return view('admin.sales.sales.create');
     }
 
     /**
@@ -81,13 +107,5 @@ class ClientController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function getClients() {
-        // $request = request();
-        $users   = User::role('customer');
-        // $user   = User::all();
-        // return User::get();
-        return $users->get();
     }
 }

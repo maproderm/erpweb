@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Sales\Client;
-use App\Models\User;
-use Illuminate\Http\Request;
+namespace App\Http\Controllers\Sales\Sale;
 use App\Http\Controllers\Controller;
 
-class ClientController extends Controller
+use Illuminate\Http\Request;
+
+class SaleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return view('admin.sales.clients.index');
+        // return view('admin.sales.pedidos.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.sales.sales.create');
     }
 
     /**
@@ -81,13 +81,5 @@ class ClientController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function getClients() {
-        // $request = request();
-        $users   = User::role('customer');
-        // $user   = User::all();
-        // return User::get();
-        return $users->get();
     }
 }

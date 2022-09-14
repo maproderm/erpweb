@@ -59,7 +59,7 @@ class ProductController extends Controller
         $data->typematerial = Imaqtypematerial::all();
         $data->satunidadkey = Imaqsatunidadkey::all();
         $data->size         = Imaqsize::all();
-        return view('admin.warehouseimaq.inventory.create', compact('data'));
+        return view('admin.sales.inventory.create', compact('data'));
     }
 
 
@@ -127,9 +127,10 @@ class ProductController extends Controller
     // }
     public function getProductsMapro() {
         $request = request();
-        // $inventory   = Inventory::with(['category','division','provider','brand','umedida','typematerial','satkeyunidad', 'levelarea', 'size', 'clasesat']);
-        $inventory   = Inventory::all();
+        $inventory   = Inventory::with(['category','division','provider','brand','umedida','typematerial','satkeyunidad', 'levelarea', 'size', 'clasesat']);
+        // $inventory   = Inventory::all();
         return $inventory->where('status', 1)->get();
+        // return Inventory::get();
     }
     /**
      * Display the specified resource.

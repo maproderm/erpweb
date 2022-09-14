@@ -6,7 +6,7 @@ var KTDatatablesButtons = function () {
     var datatable;
     // Private functions
     var initDatatable = function () {
-        let url     = `${HOST_URL}/products/get-maproderm-all`;
+        let url     = `${HOST_URL}/productos/get-maproderm-all`;
         let columns = [
             {   //ID
                 targets   : 0,
@@ -155,7 +155,7 @@ var KTDatatablesButtons = function () {
                 }
             },
             // {
-            //     //INVENTARIO MINIMO
+                //INVENTARIO MINIMO
             //     targets: 17,
             //     className : 'dt-head-center dt-body-center',
             //     render    : function (data, type, row) {

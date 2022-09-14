@@ -1,5 +1,5 @@
 @extends('administrator.index')
-@section('title','Inventario | IMAQ')
+@section('title','Productos | MaProDerm')
 @section('content')
 <div class="d-flex flex-column-fluid">
     <div class="container-fluid">
@@ -19,26 +19,26 @@
                 {{-- <table class="table align-middle table-row-dashed fs-6 gy-5 ajax_datatable"> --}}
                 <table id="kt_datatable_horizontal_scroll" class="table align-middle table-striped table-row-bordered gy-3 gs-7 ajax_datatable">
                     <thead>
-                    {{-- <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0"> --}}
-                    <tr class="text-start text-dark fw-bolder fs-7 text-uppercase gs-0">
-                        <th>N°</th>
-                        <th class="min-w-200px">Nombre</th>
-                        <th>Cantidad</th>
-                        <th>Precio</th>
-                        <th class="min-w-100px">División</th>
-                        <th>Categoría</th>
-                        <th>Ubicación</th>
-                        <th>SKU</th>
-                        <th>C. barras</th>
-                        <th class="min-w-200px">Proveedor</th>
-                        <th class="min-w-100px">Marca</th>
-                        <th>Tamaño</th>
-                        <th>Tipo Material</th>
-                        <th>U. SAT</th>
-                        <th>P. SAT</th>
-                        <th>Inv. Mínimo</th>
-                        <th class="text-center min-w-100px">Acciones</th>
-                    </tr>
+                        {{-- <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0"> --}}
+                        <tr class="text-start text-dark fw-bolder fs-7 text-uppercase gs-0">
+                            <th>N°</th>
+                            <th class="min-w-200px">Nombre</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th class="min-w-100px">División</th>
+                            <th>Categoría</th>
+                            <th>Ubicación</th>
+                            <th>SKU</th>
+                            <th>C. barras</th>
+                            <th class="min-w-200px">Proveedor</th>
+                            <th class="min-w-100px">Marca</th>
+                            <th>Tamaño</th>
+                            <th>Tipo Material</th>
+                            <th>U. SAT</th>
+                            <th>P. SAT</th>
+                            <th>Inv. Mínimo</th>
+                            <th class="text-center min-w-100px">Acciones</th>
+                        </tr>
                     </thead>
                     <tbody xclass="text-gray-600 fw-bold">
                     </tbody>

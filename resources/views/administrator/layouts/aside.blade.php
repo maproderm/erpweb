@@ -2587,20 +2587,20 @@
                 <!--begin:Menu item-->
                 <div class="menu-item">
                     <!--begin:Menu link-->
-                    <a class="menu-link" href="{{ route('view-user') }}">
+                    <a class="menu-link {{ setActive('ventas.create') }}" href="{{ route('ventas.create') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
                             {{-- <i class="bi bi-fingerprint fs-3"></i> --}}
                             <i class="bi bi-cart-plus-fill fs-3"></i>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Ventas</span>
+                        <span class="menu-title">Venta</span>
                     </a>
                     <!--end:Menu link-->
                 </div>
                 <!--end:Menu item-->
                 <!--begin:Menu item-->
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ setOpen('pedidos') }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
                         <span class="menu-icon">
@@ -2617,7 +2617,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/apps/projects/list.html">
+                            <a class="menu-link {{ setActive('pedidos.index') }}" href="{{ route('pedidos.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -2629,7 +2629,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/apps/projects/project.html">
+                            <a class="menu-link {{ setActive('pedidos.quotation') }}" href="{{ route('pedidos.quotation') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -2643,17 +2643,11 @@
                 </div>
                 <!--end:Menu item-->
                 <!--begin:Menu item-->
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ setOpen('productos.mapro') }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
                         <span class="menu-icon">
-                            <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/kt-products/metronic/releases/2022-07-14-092914/core/html/src/media/icons/duotune/general/gen001.svg-->
-                            <span class="svg-icon svg-icon-2 svg-icon-success">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11 2.375L2 9.575V20.575C2 21.175 2.4 21.575 3 21.575H9C9.6 21.575 10 21.175 10 20.575V14.575C10 13.975 10.4 13.575 11 13.575H13C13.6 13.575 14 13.975 14 14.575V20.575C14 21.175 14.4 21.575 15 21.575H21C21.6 21.575 22 21.175 22 20.575V9.575L13 2.375C12.4 1.875 11.6 1.875 11 2.375Z" fill="currentColor"/>
-                                </svg>
-                            </span>
-                            <!--end::Svg Icon-->
+                            <i class="fa-solid fa-store fs-3"></i>
                         </span>
                         <span class="menu-title">Inventario</span>
                         <span class="menu-arrow"></span>
@@ -2664,8 +2658,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            {{-- <a class="menu-link" href="../../demo8/dist/apps/projects/list.html"> --}}
-                            <a class="menu-link {{ setActive('products.mapro.index') }}" href="{{ route('products.mapro.index') }}">
+                            <a class="menu-link {{ setActive('productos.mapro.index') }}" href="{{ route('productos.mapro.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -2677,7 +2670,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/apps/projects/project.html">
+                            <a class="menu-link {{ setActive('productos.mapro.create') }}" href="{{ route('productos.mapro.create') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -2693,11 +2686,12 @@
                 <!--begin:Menu item-->
                 <div class="menu-item">
                     <!--begin:Menu link-->
-                    <a class="menu-link" href="{{ route('view-user') }}">
+                    <a class="menu-link {{ setActive('clientes.index') }}" href="{{ route('clientes.index') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
                             {{-- <i class="bi bi-fingerprint fs-3"></i> --}}
-                            <i class="bi bi-people-fill fs-3"></i>
+                            {{-- <i class="bi bi-people-fill fs-3"></i> --}}
+                            <i class="fa-solid fa-users fs-3"></i>
                             <!--end::Svg Icon-->
                         </span>
                         <span class="menu-title">Clientes</span>
@@ -2708,11 +2702,13 @@
                 <!--begin:Menu item-->
                 <div class="menu-item">
                     <!--begin:Menu link-->
-                    <a class="menu-link" href="{{ route('view-user') }}">
+                    <a class="menu-link {{ setActive('dealers.index') }}" href="{{ route('dealers.index') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
                             {{-- <i class="bi bi-fingerprint fs-3"></i> --}}
-                            <i class="bi bi-person-workspace fs-3"></i>
+                            {{-- <i class="bi bi-person-workspace fs-3"></i> --}}
+                            {{-- <i class="fa-solid fa-users-rectangle fs-3"></i> --}}
+                            <i class="fa-solid fa-users-rays fs-3"></i>
                             <!--end::Svg Icon-->
                         </span>
                         <span class="menu-title">Distribuidores</span>
@@ -2721,7 +2717,7 @@
                 </div>
                 <!--end:Menu item-->
                 <!--begin:Menu item-->
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ setOpen('configmapro') }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
                         <span class="menu-icon">
@@ -2736,7 +2732,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/apps/projects/list.html">
+                            <a class="menu-link {{ setActive('configmapro.categories') }}" href="{{ route('configmapro.categories') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -2748,7 +2744,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo8/dist/apps/projects/project.html">
+                            <a class="menu-link {{ setActive('configmapro.brands') }}" href="{{ route('configmapro.brands') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
