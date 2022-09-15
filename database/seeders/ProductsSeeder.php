@@ -30,7 +30,7 @@ class ProductsSeeder extends Seeder
             'minimum_inventory'=>'20',
             'price_product_inventory'=>150,
             'description_product_inventory'=>'Pigmento mineral puro. Este producto puede ser utilizado como sombra, delineador, esmalte o labial. También lo puedes mezclar con otros pigmentos para obtener una gama infinita de colores y estilos.',
-            'status'=>0,
+            'status'=>1,
         ] );
     }
 }

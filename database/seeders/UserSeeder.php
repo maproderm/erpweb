@@ -72,5 +72,13 @@ class UserSeeder extends Seeder
             'password'  => Hash::make('Superadmin2022'),
         ]);
         $sales->assignRole('sales');
+
+        $almacenmapro = User::create([
+            'name'      => 'Almacen',
+            'last_name' => 'Maproderm',
+            'email'     => 'almacen@maproderm.com',
+            'password'  => Hash::make('Almacenmpd2022'),
+        ]);
+        $almacenmapro->assignRole('almacenmapro');
     }
 }

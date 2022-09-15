@@ -17,7 +17,7 @@
                 </div>
                 <!--begin::Datatable-->
                 {{-- <table class="table align-middle table-row-dashed fs-6 gy-5 ajax_datatable"> --}}
-                <table id="kt_datatable_horizontal_scroll" class="table align-middle table-striped table-row-bordered gy-3 gs-7 ajax_datatable">
+                <table xid="kt_datatable_horizontal_scroll" class="table align-middle table-striped table-row-bordered gy-3 gs-7 ajax_datatable">
                     <thead>
                         {{-- <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0"> --}}
                         <tr class="text-start text-dark fw-bolder fs-7 text-uppercase gs-0">
