@@ -45,9 +45,7 @@ class BrandController extends Controller
 
 
     public function getBrands() {
-
-        return Imaqbrand::get();
-
+        return Imaqbrand::where('type', 3)->get();
     }
     /**
      * Display the specified resource.

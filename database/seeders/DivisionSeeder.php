@@ -17,19 +17,18 @@ class DivisionSeeder extends Seeder
     {
         //
         DB::table('imaq_division')->insert([
-            'name'=>'Almacén IMAQ'
-        ] );
-
-        // DB::table('division')->insert([
-        //     'name'=>'Almacén MaProDerm'
-        // ] );
-
-        DB::table('imaq_division')->insert([
-            'name'=>'Materia Prima'
+            'name'=>'Almacén IMAQ',
+            'abrv'=>'IMAQ'
         ] );
 
         DB::table('imaq_division')->insert([
-            'name'=>'Producto Terminado'
+            'name'=>'Materia Prima',
+            'abrv'=>'MPRIMA'
+        ] );
+
+        DB::table('imaq_division')->insert([
+            'name'=>'Producto Terminado',
+            'abrv'=>'MPD'
         ] );
     }
 }

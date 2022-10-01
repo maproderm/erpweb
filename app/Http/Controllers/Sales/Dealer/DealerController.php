@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Sales\Dealer;
-use App\Http\Controllers\Controller;
 
+use App\Models\Mpddealer;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DealerController extends Controller
 {
@@ -81,5 +82,13 @@ class DealerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getDealers() {
+        // $users   = User::role('customer');
+        // return $users->get();
+        $request = request();
+        $dealers   = Mpddealer::with(['dealer']);
+        return $dealers->get();
     }
 }

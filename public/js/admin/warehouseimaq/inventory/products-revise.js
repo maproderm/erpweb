@@ -29,7 +29,7 @@ var KTDatatablesButtons = function () {
                 targets   : 2,
                 orderable : false,
                 render    : function (data, type, row) {
-                    if(row.stock_inventory < row.minimum_inventory){
+                    if(row.stock_inventory <= row.minimum_inventory){
                         return `<span class="badge badge-danger">${row.stock_inventory}</span>`;
                     }if (row.stock_inventory == row.minimum_inventory){
                         return `<span class="badge badge-warning">${row.stock_inventory}</span>`;

@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('imaq_division', function (Blueprint $table) {
+        Schema::create('mpd_type_product', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('abrv');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('imaq_division');
+        Schema::dropIfExists('mpd_type_product');
     }
 };

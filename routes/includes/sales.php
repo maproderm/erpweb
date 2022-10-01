@@ -22,6 +22,7 @@ Route::group(['middleware' => ['role:developer|superadmin|sales']], function () 
 
     //Distribuidores
     Route::get('/distribuidores',[DealerController::class,'index'])->middleware(['auth'])->name('dealers.index');
+    Route::get('/distribuidores/get-all',[DealerController::class,'getDealers'])->middleware(['auth'])->name('dealers.get');
     Route::resource('distribuidores', DealerController::class)->middleware(['auth'])->names('dealers')->except(['destroy']);
 
     //Ventas
@@ -34,7 +35,7 @@ Route::group(['middleware' => ['role:developer|superadmin|sales']], function () 
     Route::get('/cotizaciones',[PedidoController::class,'quotation'])->middleware(['auth'])->name('pedidos.quotation');
     Route::resource('pedidos', PedidoController::class)->middleware(['auth'])->names('pedidos')->except(['destroy']);
 
-    //Orders
+    //Config
     Route::get('/categorias-maproderm',[ConfigmaproController::class,'categories'])->middleware(['auth'])->name('configmapro.categories');
     Route::get('/categorias/get-maproderm-all',[ConfigmaproController::class,'getCategories'])->middleware(['auth'])->name('configmapro.categoriesall');
     Route::get('/marcas-maproderm',[ConfigmaproController::class,'brands'])->middleware(['auth'])->name('configmapro.brands');

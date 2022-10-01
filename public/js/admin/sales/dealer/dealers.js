@@ -6,7 +6,7 @@ var KTDatatablesButtons = function () {
     var datatable;
     // Private functions
     var initDatatable = function () {
-        let url     = `${HOST_URL}/clientes/get-clients-all`;
+        let url     = `${HOST_URL}/distribuidores/get-all`;
         let columns = [
             {   //ID
                 targets   : 0,
@@ -14,28 +14,28 @@ var KTDatatablesButtons = function () {
                 orderable : true,
                 asc       : true,
                 render    : function (data,type, row) {
-                    return `${row.client.id}`;
+                    return `${row.dealer.id}`;
                 }
             },
             {
                 //NAME
                 targets   : 1,
                 render    : function (data, type, row) {
-                    return `${row.client.name}`;
+                    return `${row.dealer.name}`;
                 }
             },
             {
                 //LAST_NAME
                 targets: 2,
                 render: function (data, type, row) {
-                    return `${row.client.last_name}`;
+                    return `${row.dealer.last_name}`;
                 }
             },
             {
                 //EMAIL
                 targets: 3,
                 render: function (data, type, row) {
-                    return `${row.client.email}`;
+                    return `${row.dealer.email}`;
                 }
             },
             {
@@ -94,9 +94,9 @@ var KTDatatablesButtons = function () {
                 //STATUS
                 targets: 11,
                 render: function (data, type, row) {
-                    if (row.client.status == 1) {
+                    if (row.dealer.status == 1) {
                         return `<span class="badge badge-light-success">Activo</span>`;
-                    }if (row.client.status == 2){
+                    }if (row.dealer.status == 2){
                         return `<span class="badge badge-light-danger">Inactivo</span>`;
                     } else {
                         return `<span class="badge badge-light-secondary">--</span>`;
@@ -108,10 +108,10 @@ var KTDatatablesButtons = function () {
                 targets: 12,
                 className : 'dt-head-center dt-body-center',
                 render: function (data, type, row) {
-                    if (row.client.last_login == null) {
+                    if (row.dealer.last_login == null) {
                         return `<span class="badge badge-light-secondary">--</span>`;
                     } else {
-                        return `${row.client.last_login}`;
+                        return `${row.dealer.last_login}`;
                     }
 
                 }

@@ -14,6 +14,13 @@
                             </span>
                         </div>
                     </div>
+                    <!--begin::Toolbar-->
+                    <div class=" col-md-8 my-2 my-md-0 d-flex justify-content-end" data-kt-customer-table-toolbar="base">
+                        <!--begin::Add customer-->
+                        <button type="button" class="btn btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Add Customer</button>
+                        <!--end::Add customer-->
+                    </div>
+                    <!--end::Toolbar-->
                 </div>
                 <!--begin::Datatable-->
                 {{-- <table class="table align-middle table-row-dashed fs-6 gy-5 ajax_datatable"> --}}

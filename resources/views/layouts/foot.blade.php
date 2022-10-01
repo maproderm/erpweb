@@ -48,6 +48,18 @@
         @stack('scripts')
         {{-- END SCRIPTS EXTAS --}}
 
+        @if (Session::has('alert'))
+		<script>
+			$(document).ready(function(){
+				Swal.fire({
+					title : '',
+					icon  : "{{ Session::get('alert.type') }}",
+					html  : "{!! Session::get('alert.message') !!}"
+				});
+			});
+		</script>
+	@endif
+
 	</body>
 	<!--end::Body-->
 </html>

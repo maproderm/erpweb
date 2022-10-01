@@ -24,6 +24,13 @@
                         <th>Nombre</th>
                         <th>Apellidos</th>
                         <th>Correo</th>
+                        <th>Dirección</th>
+                        <th>Ciudad</th>
+                        <th>Código Postal</th>
+                        <th>Teléfono</th>
+                        <th>N° Pedidos</th>
+                        <th>Gasto Total</th>
+                        <th>Promedio</th>
                         <th>Estatus</th>
                         <th>ültimo Login</th>
                         <th class="text-center min-w-100px">Acciones</th>

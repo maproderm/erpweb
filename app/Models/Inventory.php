@@ -36,6 +36,7 @@ class Inventory extends Model
         'suggested_sale_inventory',
         'price_product_inventory',
         'description_product_inventory',
+        'type_id',
         'status'
     ];
 
@@ -77,6 +78,10 @@ class Inventory extends Model
 
     public function clasesat() {
         return $this->belongsTo('App\Models\Imaqproductsat', 'key_sat_product_inventory', 'id');
+    }
+
+    public function typeproduct() {
+        return $this->belongsTo('App\Models\Mpdtypeproduct', 'type_id', 'id');
     }
 
 }

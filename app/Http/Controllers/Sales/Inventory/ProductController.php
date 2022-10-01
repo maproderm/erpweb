@@ -129,7 +129,11 @@ class ProductController extends Controller
         $request = request();
         $inventory   = Inventory::with(['category','division','provider','brand','umedida','typematerial','satkeyunidad', 'levelarea', 'size', 'clasesat']);
         // $inventory   = Inventory::all();
-        return $inventory->where('status', 1)->get();
+        return $inventory
+                ->wherein('status', [0, 1, 2, 3])
+                // ->where('type_id', 2)
+                ->get();
+        // return $inventory->get();
         // return Inventory::get();
     }
     /**

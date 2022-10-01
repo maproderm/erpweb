@@ -36,7 +36,7 @@
                         <div class="card-body pt-5">
                             <!--begin::Form-->
 
-                            <form id="kt_ecommerce_settings_general_form" class="form" action="{{  route('inventory.store')  }}" method="POST">
+                            <form id="kt_ecommerce_settings_general_form" class="form" action="{{  route('products.store')  }}" method="POST">
                                 @csrf
                             {{-- <form id="kt_ecommerce_settings_general_form" class="form" action="{{ route('create-inventory') }}" method="POST"> --}}
                                 <!--begin::Input group-->
@@ -122,27 +122,7 @@
                                 <!--end::Row-->
                                 <!--begin::Row-->
                                 <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
-                                    <!--begin::Col-->
-                                    <div class="col">
-                                        <!--begin::Input group-->
-                                        <div class="fv-row mb-5">
-                                            <!--begin::Label-->
-                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                <span class="required">División</span>
-                                            </label>
-                                            <!--end::Label-->
-                                            <!--begin::Input-->
-                                            <select class="form-select" data-control="select2" data-placeholder="Selecciona una opción" name="division_id" value="{{ old('division_id') }}" >
-                                                <option></option>
-                                                @foreach ($data->division as $division)
-                                                <option name="division_id" value="{{ $division->id }}">{{ $division->name }}</option>
-                                                @endforeach
-                                            </select>
-                                            <!--end::Input-->
-                                        </div>
-                                        <!--end::Input group-->
-                                    </div>
-                                    <!--end::Col-->
+
                                     <!--begin::Col-->
                                     <div class="col">
                                         <!--begin::Input group-->
@@ -169,10 +149,6 @@
                                         <!--end::Input group-->
                                     </div>
                                     <!--end::Col-->
-                                </div>
-                                <!--end::Row-->
-                                <!--begin::Row-->
-                                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
                                     <!--begin::Col-->
                                     <div class="col">
                                         <!--begin::Input group-->
@@ -199,6 +175,10 @@
                                         <!--end::Input group-->
                                     </div>
                                     <!--end::Col-->
+                                </div>
+                                <!--end::Row-->
+                                <!--begin::Row-->
+                                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
                                     <!--begin::Col-->
                                     <div class="col">
                                         <!--begin::Input group-->
@@ -226,10 +206,6 @@
                                         <!--end::Input group-->
                                     </div>
                                     <!--end::Col-->
-                                </div>
-                                <!--end::Row-->
-                                <!--begin::Row-->
-                                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
                                     <!--begin::Col-->
                                     <div class="col">
                                         <!--begin::Input group-->
@@ -257,6 +233,11 @@
                                         <!--end::Input group-->
                                     </div>
                                     <!--end::Col-->
+                                </div>
+                                <!--end::Row-->
+                                <!--begin::Row-->
+                                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+
                                     <!--begin::Col-->
                                     <div class="col">
                                         <!--begin::Input group-->
@@ -283,10 +264,6 @@
                                         <!--end::Input group-->
                                     </div>
                                     <!--end::Col-->
-                                </div>
-                                <!--end::Row-->
-                                <!--begin::Row-->
-                                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
                                     <!--begin::Col-->
                                     <div class="col">
                                         <!--begin::Input group-->
@@ -313,6 +290,11 @@
                                         <!--end::Input group-->
                                     </div>
                                     <!--end::Col-->
+                                </div>
+                                <!--end::Row-->
+                                <!--begin::Row-->
+                                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+
                                     <!--begin::Col-->
                                     <div class="col">
                                         <!--begin::Input group-->
@@ -339,10 +321,6 @@
                                         <!--end::Input group-->
                                     </div>
                                     <!--end::Col-->
-                                </div>
-                                <!--end::Row-->
-                                <!--begin::Row-->
-                                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
                                     <!--begin::Col-->
                                     <div class="col">
                                         <!--begin::Input group-->
@@ -369,6 +347,11 @@
                                         <!--end::Input group-->
                                     </div>
                                     <!--end::Col-->
+                                </div>
+                                <!--end::Row-->
+                                <!--begin::Row-->
+                                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+
                                     <!--begin::Col-->
                                     <div class="col">
                                         <!--begin::Input group-->
@@ -390,6 +373,22 @@
                                                     </select>
                                                 </div>
                                             </div>
+                                            <!--end::Input-->
+                                        </div>
+                                        <!--end::Input group-->
+                                    </div>
+                                    <!--end::Col-->
+                                    <!--begin::Col-->
+                                    <div class="col">
+                                        <!--begin::Input group-->
+                                        <div class="fv-row mb-5">
+                                            <!--begin::Label-->
+                                            <label class="fs-6 fw-semibold form-label mt-3">
+                                                <span class="required">Inventario mínimo</span>
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <input type="number" class="form-control" name="minimum_inventory" value="" required/>
                                             <!--end::Input-->
                                         </div>
                                         <!--end::Input group-->
@@ -455,22 +454,7 @@
                                 <!--end::Row-->
                                 <!--begin::Row-->
                                 <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
-                                    <!--begin::Col-->
-                                    <div class="col">
-                                        <!--begin::Input group-->
-                                        <div class="fv-row mb-5">
-                                            <!--begin::Label-->
-                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                <span class="required">Inventario mínimo</span>
-                                            </label>
-                                            <!--end::Label-->
-                                            <!--begin::Input-->
-                                            <input type="number" class="form-control" name="minimum_inventory" value="" required/>
-                                            <!--end::Input-->
-                                        </div>
-                                        <!--end::Input group-->
-                                    </div>
-                                    <!--end::Col-->
+
                                     <!--begin::Col-->
                                     <div class="col">
                                         <!--begin::Input group-->
@@ -484,6 +468,25 @@
                                             <div class="input-group mb-5">
                                                 <span class="input-group-text">$</span>
                                                 <input id="number" type="number" class="form-control" name="unit_cost_inventory" step=".01" value="" required/>
+                                            </div>
+                                            <!--end::Input-->
+                                        </div>
+                                        <!--end::Input group-->
+                                    </div>
+                                    <!--end::Col-->
+                                    <!--begin::Col-->
+                                    <div class="col">
+                                        <!--begin::Input group-->
+                                        <div class="fv-row mb-7">
+                                            <!--begin::Label-->
+                                            <label class="fs-6 fw-semibold form-label mt-3">
+                                                <span class="required">Precio</span>
+                                            </label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <div class="input-group mb-5">
+                                                <span class="input-group-text">$</span>
+                                                <input id="number" type="number" class="form-control" step=".01" name="price_product_inventory" value="" disabled/>
                                             </div>
                                             <!--end::Input-->
                                         </div>
@@ -509,25 +512,6 @@
                                         </div>
                                         <!--end::Input group-->
                                     </div> --}}
-                                    <!--end::Col-->
-                                    <!--begin::Col-->
-                                    <div class="col">
-                                        <!--begin::Input group-->
-                                        <div class="fv-row mb-7">
-                                            <!--begin::Label-->
-                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                <span class="required">Precio</span>
-                                            </label>
-                                            <!--end::Label-->
-                                            <!--begin::Input-->
-                                            <div class="input-group mb-5">
-                                                <span class="input-group-text">$</span>
-                                                <input id="number" type="number" class="form-control" step=".01" name="price_product_inventory" value="" disabled/>
-                                            </div>
-                                            <!--end::Input-->
-                                        </div>
-                                        <!--end::Input group-->
-                                    </div>
                                     <!--end::Col-->
                                 </div>
                                 <!--end::Row-->

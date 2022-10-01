@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Sales\Client;
 use App\Models\User;
+use App\Models\Mpdclient;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -84,10 +85,10 @@ class ClientController extends Controller
     }
 
     public function getClients() {
-        // $request = request();
-        $users   = User::role('customer');
-        // $user   = User::all();
-        // return User::get();
-        return $users->get();
+        // $users   = User::role('customer');
+        // return $users->get();
+        $request = request();
+        $clients   = Mpdclient::with(['client']);
+        return $clients->get();
     }
 }

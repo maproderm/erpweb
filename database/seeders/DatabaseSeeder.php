@@ -31,10 +31,12 @@ class DatabaseSeeder extends Seeder
             TmaterialSeeder::class,
             UmeasurementSeeder::class,
             SatunidadSeeder::class,
-            ProductsatSeeder::class,
             AreasSectionSeeder::class,
             LevelsAreaSeeder::class,
             SizeSeeder::class,
+            BankSeeder::class,
+            TypeproductSeeder::class,
+            ProductsatSeeder::class,
             ProductsSeeder::class,
         ]);
     }

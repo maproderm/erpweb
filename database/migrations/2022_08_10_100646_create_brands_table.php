@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('imaq_brands', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('type')->comment('1:Local 2:Maquila 3:Proveedor');
             $table->string('description');
             $table->softDeletes();
             $table->timestamps();

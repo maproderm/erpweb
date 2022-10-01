@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('key');
             $table->string('name');
-            $table->string('description');
+            $table->string('business_name');
             $table->string('status');
             $table->softDeletes();
             $table->timestamps();

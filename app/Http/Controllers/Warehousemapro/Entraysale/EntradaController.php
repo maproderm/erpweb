@@ -1,48 +1,25 @@
 <?php
 
-namespace App\Http\Controllers\Sales\Config;
-use App\Models\Imaqbrand;
-use App\Models\Imaqcategory;
-use Illuminate\Http\Request;
+namespace App\Http\Controllers\Warehousemapro\Entraysale;
 use App\Http\Controllers\Controller;
 
-class ConfigmaproController extends Controller
+use Illuminate\Http\Request;
+
+class EntradaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function entrada()
     {
-        // return view('admin.sales.pedidos.index');
+        return view('admin.warehousemapro.orders.neworders');
     }
 
-    public function categories()
+    public function salida()
     {
-        return view('admin.sales.config.categories');
-    }
-
-    public function brands()
-    {
-        return view('admin.sales.config.brands');
-    }
-
-    public function getCategories() {
-
-        // return Imaqcategory::get();
-        $request = request();
-        $inventory   = Imaqcategory::with(['division']);
-        return $inventory->where('division_id', 3)->get();
-        // return $inventory->get();
-
-    }
-
-    public function getBrands() {
-
-        // return Imaqbrand::get();
-        return Imaqbrand::wherein('type', [1, 2])->get();
-
+        return view('admin.warehousemapro.orders.completeorders');
     }
 
     /**
@@ -52,7 +29,7 @@ class ConfigmaproController extends Controller
      */
     public function create()
     {
-        // return view('admin.sales.sales.create');
+        //
     }
 
     /**

@@ -50,9 +50,9 @@ class InventoryController extends Controller
         $data->division     = Imaqdivision::all();
         // $data->category     = Imaqcategory::all();
         $data->category     = Imaqcategory::all()->where('division_id',1);
-        $data->levelarea    = Imaqlevelarea::all()->where('division_id',3);
-        $data->user         = User::all();
-        $data->brand        = Imaqbrand::all();
+        $data->levelarea    = Imaqlevelarea::all()->where('division_id',1);
+        $data->user         = User::role('provider')->get();
+        $data->brand        = Imaqbrand::all()->where('type',3);
         $data->umedida      = Imaqumedida::all();
         $data->provider     = Imaqprovider::with('provider')->get();
         $data->productsat   = Imaqproductsat::all();
@@ -85,7 +85,7 @@ class InventoryController extends Controller
         $event = Inventory::create([
             'name_product_inventory'        => $request->name_product_inventory,
             'stock_inventory'               => $request->stock_inventory,
-            'division_id'                   => $request->division_id,
+            'division_id'                   => 1,
             'category_id'                   => $request->category_id,
             'level_area_id'                 => $request->level_area_id,
             'sku_product_inventory'         => $request->sku_product_inventory,

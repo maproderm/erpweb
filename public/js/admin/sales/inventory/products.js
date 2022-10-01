@@ -14,7 +14,8 @@ var KTDatatablesButtons = function () {
                 orderable : true,
                 asc       : true,
                 render    : function (data,type, row) {
-                    return `${row.id}`;
+                    // return `${row.id}`;
+                    return `${row.sku_product_inventory}`;
                 }
             },
             {
@@ -27,7 +28,7 @@ var KTDatatablesButtons = function () {
             {
                 //CANTIDAD
                 targets   : 2,
-                orderable : false,
+                // className : 'dt-head-center dt-body-center',
                 render    : function (data, type, row) {
                     if(row.stock_inventory < row.minimum_inventory){
                         return `<span class="badge badge-danger">${row.stock_inventory}</span>`;
@@ -47,17 +48,29 @@ var KTDatatablesButtons = function () {
                 }
             },
             {
+                //PROMOCION
+                targets: 3,
+                className : 'dt-head-center dt-body-center',
+                render    : function (data, type, row) {
+                    if (row.discount_product_inventory == null) {
+                        return `<span class="badge badge-light-warning">--</span>`;
+                    } else {
+                        return `$${Number(row.discount_product_inventory).toFixed(2)}`;
+                    }
+
+                }
+            },
+            {
                 //DIVISION
                 targets: 4,
-                orderable: false,
+                className : 'dt-head-center dt-body-center',
                 render: function (data, type, row) {
-                    return `${row.division.name}`;
+                    return `${row.division.abrv}`;
                 }
             },
             {
                 //CATEGORIA
                 targets: 5,
-                orderable: false,
                 render: function (data, type, row) {
                     return `${row.category.name}`;
                 }
@@ -65,7 +78,6 @@ var KTDatatablesButtons = function () {
             {
                 //UBICACION
                 targets: 6,
-                orderable: false,
                 render: function (data, type, row) {
                     if (row.levelarea == null) {
                         return `<span class="badge badge-light-danger">--</span>`;
@@ -74,16 +86,16 @@ var KTDatatablesButtons = function () {
                     }
                 }
             },
-            {
-                //SKU
-                targets: 7,
-                render: function (data, type, row) {
-                    return `<span style="text-transform:uppercase">${row.sku_product_inventory}</span>`;
-                }
-            },
+            // {
+            //     //SKU
+            //     targets: 7,
+            //     render: function (data, type, row) {
+            //         return `<span style="text-transform:uppercase">${row.sku_product_inventory}</span>`;
+            //     }
+            // },
             {
                 //CODIGO DE BARRAS
-                targets: 8,
+                targets: 7,
                 render: function (data, type, row) {
                     if (row.barcode_product_inventory == null) {
                         return `<span class="badge badge-light-danger">--</span>`;
@@ -92,17 +104,17 @@ var KTDatatablesButtons = function () {
                     }
                 }
             },
-            {
-                //PROVEEDORES
-                targets: 9,
-                render: function (data, type, row) {
-                    // return `${row.id}`;
-                    return `${row.provider.name} ${row.provider.last_name}`;
-                }
-            },
+            // {
+            //     //PROVEEDORES
+            //     targets: 9,
+            //     render: function (data, type, row) {
+            //         // return `${row.id}`;
+            //         return `${row.provider.name} ${row.provider.last_name}`;
+            //     }
+            // },
             {
                 //MARCA
-                targets: 10,
+                targets: 8,
                 render: function (data, type, row) {
                     return `${row.brand.name}`;
                 }
@@ -116,40 +128,40 @@ var KTDatatablesButtons = function () {
             // },
             {
                 //TAMAÑO
-                targets: 11,
+                targets: 9,
                 render: function (data, type, row) {
                     return `${row.size.name}`;
                 }
             },
-            {
-                //TIPO MATERIAL
-                targets: 12,
-                render: function (data, type, row) {
-                    if (row.typematerial == null) {
-                        return `<span class="badge badge-light-danger">--</span>`;
-                    } else {
-                        return `${row.typematerial.name}`;
-                    }
+            // {
+            //     //TIPO MATERIAL
+            //     targets: 10,
+            //     render: function (data, type, row) {
+            //         if (row.typematerial == null) {
+            //             return `<span class="badge badge-light-danger">--</span>`;
+            //         } else {
+            //             return `${row.typematerial.name}`;
+            //         }
 
-                }
-            },
+            //     }
+            // },
             {
                 //U SAT
-                targets: 13,
+                targets: 11,
                 render: function (data, type, row) {
                     return `${row.satkeyunidad.key}`;
                 }
             },
             {
                 //P SAT
-                targets: 14,
+                targets: 12,
                 render: function (data, type, row) {
                     return `${row.clasesat.key}`;
                 }
             },
             {
                 //LINE_ID
-                targets: 15,
+                targets: 13,
                 render: function (data, type, row) {
                     return `${row.minimum_inventory}`;
                 }
@@ -163,14 +175,31 @@ var KTDatatablesButtons = function () {
             //     }
             // },
             {
+                //NAME
+                targets   : 14,
+                render    : function (data, type, row) {
+                    if (row.status == 1) {
+                        return `<span class="badge badge-light-success">Activo</span>`;
+                    }if (row.status == 2){
+                        return `<span class="badge badge-light-danger">Rechazado</span>`;
+                    }if (row.status == 3){
+                        return `<span class="badge badge-light-info">Inactivo</span>`;
+                    }if (row.status == 0){
+                        return `<span class="badge badge-light-warning">Revisión</span>`;
+                    } else {
+                        return `<span class="badge badge-light-secondary">--</span>`;
+                    }
+                }
+            },
+            {
                 //ACCIONES
-                targets: 16,
+                targets: 15,
                 data: null,
                 orderable: false,
                 className: 'text-end',
                 render: function (data, type, row) {
                     return `
-                        <a href="#" class="btn btn-icon btn-light-warning"><i class="bi bi-pencil"></i></i></a>
+                        <a href="#" class="btn btn-icon btn-light-warning" data-bs-toggle="modal" data-bs-target="#kt_modal_new_target" id="kt_toolbar_primary_button"><i class="bi bi-pencil"></i></i></a>
                         <a href="#" class="btn btn-icon btn-light-danger"><i class="bi bi-trash fs-2 me-2"></i></i></a>
                     `;
                 }
@@ -238,10 +267,104 @@ var KTDatatablesButtons = function () {
         });
     }
 
+    let _modalDetails = function(){
+        $(document).on('click','.employee_details', function(){
+            let id = $(this).data('id');
+            factoryNixDit.methods.processDataByAjax(`empleados/${id}`,'GET').done(function(response){
+                if(!response.error){
+                    let data = response.employee;
+                    $('#employee_name_title').text(`Detalles del empleado: "${data.name} ${data.last_name} ${data.mothers_last_name}"`);
+                    $('#name_details').text(`${data.name} ${data.last_name} ${data.mothers_last_name}`);
+                    $('#phone_details').text(data.phone);
+                    $('#age_details').text(data.age);
+                    $('#address_details').text(data.address);
+                    $('#state_details').text(data.state?.name);
+                    $('#municipality_details').text(data.municipality?.name);
+                    (data.gender == 'Masculino') ? $('#gender_details').text('Hombre') : $('#gender_details').text('Mujer');
+                    $('#date_register_details').text(data.date_admission);
+                    $('#job_details').text(data.job?.name);
+                    (data.schedule) ? $('#schedule_details').text(data.schedule?.name) : $('#schedule_details').text('Sin horario');
+                    (data.type_salary == 1) ? $('#salary_text_details').text('Base') : $('#salary_text_details').text('Por destajo');
+                    $('#salary_details').text("$" + Number(data.salary).toFixed(2));
+                    // $('#salary_per_day_details').text("$" + Number(data.salary_per_day).toFixed(2));
+                    $('#salary_per_hour_details').text("$" + Number(data.salary_per_hour).toFixed(2));
+                    (data.custom_salary == 1) ? $('#custom_salary_details').text('SI') : $('#custom_salary_details').text('NO') ;
+                    $('#birthday_details').text(data.clinical_data.birthday);
+                    $('#type_blood_details').text(data.clinical_data.blood_type);
+                    $('#weight_details').text(`${data.clinical_data.weight} kg`);
+                    $('#height_details').text(`${data.clinical_data.height} cm`);
+                    (data.clinical_data.emergency_phone) ? $('#emergency_phone_details').text(data.clinical_data.emergency_phone) : $('#emergency_phone_details').text('No registrado');
+                    (data.clinical_data.current_condition) ? $('#current_condition_details').text(data.clinical_data.current_condition) : $('#current_condition_details').text('No registrado');
+                    (data.curp) ? $('#curp_details').text(data.curp) : $('#curp_details').text('No registrado');
+                    (data.rfc) ? $('#rfc_details').text(data.rfc) : $('#rfc_details').text('No registrado');
+                    (data.clinical_data.nss) ? $('#nss_details').text(data.clinical_data.nss) : $('#nss_details').text('No registrado');
+                    $('#infonavit_details').text('$' + Number(data.special_discounts.infonavit_discount).toFixed(2));
+                    $('#imss_details').text('$' + Number(data.special_discounts.imss_discount).toFixed(2));
+                    $('#isr_details').text('$' + Number(data.special_discounts.isr_discount).toFixed(2));
+                    if(data.salary_support == 1 && data.salary_supports?.length > 0)
+                    {
+                        $('#salary_support_check').text('SI');
+                        $('#salary_support_details_div').show();
+                        $('#salary_support_details_div').empty();
+                        $.each(data.salary_supports,function(index,value){
+                            let row = `
+                                <div class="d-block">
+                                    <span class="label label-primary label-inline">
+                                        ${value.concept}</span> <span class="text-info">=</span> <span class="label label-primary label-inline">$${Number(value.quantity).toFixed(2)}
+                                    </span> <br/>
+                                </div>
+                            `
+                            $('#salary_support_details_div').append(row);
+                        });
+                        $('#salary_support_details_note').show();
+                    } else {
+                        $('#salary_support_check').text('NO');
+                        $('#salary_support_details_div').hide();
+                        $('#salary_support_details_div').empty();
+                        $('#salary_support_details_note').hide();
+                    }
+                    if(data.payment_type == 2){
+                        $('#payment_method_details').text('DEPÓSITO BANCARIO');
+                        $('#payment_method_card_details').show();
+                        (data.bank?.name) ? $('#bank_details').text(data.bank?.name) : $('#bank_details').text('No registrado');
+                        (data.bank_account.card_number) ? $('#card_number_details').text(data.bank_account.card_number) : $('#card_number_details').text('No registrado');
+                        (data.bank_account.type_account) ? $('#type_account_details').text(data.bank_account.type_account?.name) : $('#type_account_details').text('No registrado');
+                    } else {
+                        $('#payment_method_details').text('EFECTIVO');
+                        $('#payment_method_card_details').hide();
+                    }
+                    switch (data.type_employee) {
+                        case 1:
+                                $('#type_employee_details').text('Recibirá bono por producción');
+                            break;
+                        case 2:
+                                $('#type_employee_details').text('Recibirá bono por horas extras');
+                            break;
+                        case 3:
+                                $('#type_employee_details').text('Recibirá solo salario base');
+                            break;
+                        default:
+                            break;
+                    }
+                    $('#user_details').text((data.user) ? data.user.email : 'Usuario inactivo');
+                    $('#code_details').text(data.code);
+                    $('#employee_details').modal('show');
+                } else {
+                    Swal.fire(
+                        response.title,
+                        response.message,
+                        response.type
+                    )
+                }
+            });
+        });
+    }
+
     // Public methods
     return {
         init: function () {
             initDatatable();
+            _modalDetails();
             handleSearchDatatable();
             handleDeleteRows();
         }

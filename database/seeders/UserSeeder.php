@@ -80,5 +80,21 @@ class UserSeeder extends Seeder
             'password'  => Hash::make('Almacenmpd2022'),
         ]);
         $almacenmapro->assignRole('almacenmapro');
+
+        $client = User::create([
+            'name'      => 'Luz',
+            'last_name' => 'Fuentes',
+            'email'     => 'luzfuentes7.lf@gmail.com',
+            'password'  => Hash::make('luzfuentes'),
+        ]);
+        $client->assignRole('customer');
+
+        $dealer = User::create([
+            'name'      => 'Distribuidor',
+            'last_name' => 'Fuentes',
+            'email'     => 'dealer@gmail.com',
+            'password'  => Hash::make('dealer123'),
+        ]);
+        $dealer->assignRole('distribuidor');
     }
 }

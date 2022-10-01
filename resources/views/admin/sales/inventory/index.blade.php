@@ -21,22 +21,24 @@
                     <thead>
                         {{-- <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0"> --}}
                         <tr class="text-start text-dark fw-bolder fs-7 text-uppercase gs-0">
-                            <th>N°</th>
-                            <th class="min-w-200px">Nombre</th>
+                            <th>SKU</th>
+                            <th class="min-w-100px">Nombre</th>
                             <th>Cantidad</th>
                             <th>Precio</th>
+                            <th>Promoción</th>
                             <th class="min-w-100px">División</th>
                             <th>Categoría</th>
                             <th>Ubicación</th>
-                            <th>SKU</th>
+                            {{-- <th>SKU</th> --}}
                             <th>C. barras</th>
-                            <th class="min-w-200px">Proveedor</th>
+                            {{-- <th class="min-w-200px">Proveedor</th> --}}
                             <th class="min-w-100px">Marca</th>
                             <th>Tamaño</th>
-                            <th>Tipo Material</th>
+                            {{-- <th>Tipo Material</th> --}}
                             <th>U. SAT</th>
                             <th>P. SAT</th>
                             <th>Inv. Mínimo</th>
+                            <th>Status</th>
                             <th class="text-center min-w-100px">Acciones</th>
                         </tr>
                     </thead>
@@ -48,6 +50,7 @@
         </div>
     </div>
 </div>
+@include('admin.sales.inventory.modal.modal-details')
 @endsection
 @push('scripts')
     <script type="text/javascript" src="{{  URL::asset ('js/admin/sales/inventory/products.js?v='.rand())  }}"></script>

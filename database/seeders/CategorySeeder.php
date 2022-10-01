@@ -16,21 +16,6 @@ class CategorySeeder extends Seeder
     public function run()
     {
         DB::table('imaq_categories')->insert([
-            'name'=>'Categoria 1',
-            'status'=>'1',
-            'division_id'=>'1'
-        ] );
-        DB::table('imaq_categories')->insert([
-            'name'=>'Categoria 2',
-            'status'=>'1',
-            'division_id'=>'1'
-        ] );
-        DB::table('imaq_categories')->insert([
-            'name'=>'Categoria 3',
-            'status'=>'1',
-            'division_id'=>'1'
-        ] );
-        DB::table('imaq_categories')->insert([
             'name'=>'Skin Care',
             'status'=>'1',
             'division_id'=>'3'
@@ -74,6 +59,21 @@ class CategorySeeder extends Seeder
             'name'=>'Kit',
             'status'=>'1',
             'division_id'=>'3'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Categoria 1',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Categoria 2',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Categoria 3',
+            'status'=>'1',
+            'division_id'=>'1'
         ] );
     }
 }
