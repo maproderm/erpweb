@@ -36,6 +36,7 @@
         </div>
     </div>
 </div>
+{{-- @include('layouts.includes.new_category') --}}
 @endsection
 @push('scripts')
     <script type="text/javascript" src="{{  URL::asset ('js/admin/warehouseimaq/catalog/category/category.js?v='.rand())  }}"></script>

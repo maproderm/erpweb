@@ -38,6 +38,8 @@ class DatabaseSeeder extends Seeder
             TypeproductSeeder::class,
             ProductsatSeeder::class,
             ProductsSeeder::class,
+            SaleSeeder::class,
+            SaleDetailSeeder::class,
         ]);
     }
 }

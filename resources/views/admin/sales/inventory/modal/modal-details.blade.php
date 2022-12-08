@@ -23,7 +23,7 @@
             <!--begin::Modal body-->
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                 <!--begin:Form-->
-                <form id="kt_modal_new_target_form" class="form" action="#">
+                <form id="kt_modal_new_target_form" class="form" action="">
                     <!--begin::Heading-->
                     <div class="mb-13 text-center">
                         <!--begin::Title-->
@@ -43,7 +43,7 @@
                             <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference"></i>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Ingrese el nombre del producto" name="target_title" />
+                        <input type="text" class="form-control form-control-solid" placeholder="Ingrese el nombre del producto" name="target_title" value="Name" />
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->

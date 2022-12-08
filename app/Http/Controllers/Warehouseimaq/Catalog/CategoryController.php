@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Warehouseimaq\Catalog;
 use App\Models\Rol;
 use App\Models\Imaqbrand;
 use App\Models\Imaqcategory;
+use App\Models\Imaqdivision;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\User\UserResource;
@@ -19,7 +20,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        // $data               = (object)[];
+        // $data->division     = Imaqdivision::all();
         return view('admin.warehouseimaq.catalog.category.index');
     }
 

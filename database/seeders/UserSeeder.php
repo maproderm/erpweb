@@ -81,20 +81,22 @@ class UserSeeder extends Seeder
         ]);
         $almacenmapro->assignRole('almacenmapro');
 
-        $client = User::create([
-            'name'      => 'Luz',
-            'last_name' => 'Fuentes',
-            'email'     => 'luzfuentes7.lf@gmail.com',
-            'password'  => Hash::make('luzfuentes'),
-        ]);
-        $client->assignRole('customer');
+        // $client = User::create([
+        //     'name'      => 'Luz',
+        //     'last_name' => 'Fuentes',
+        //     'email'     => 'luzfuentes7.lf@gmail.com',
+        //     'password'  => Hash::make('luzfuentes'),
+        // ]);
+        // $client->assignRole('customer');
 
-        $dealer = User::create([
-            'name'      => 'Distribuidor',
-            'last_name' => 'Fuentes',
-            'email'     => 'dealer@gmail.com',
-            'password'  => Hash::make('dealer123'),
-        ]);
-        $dealer->assignRole('distribuidor');
+        // $dealer = User::create([
+        //     'name'      => 'Distribuidor',
+        //     'last_name' => 'Fuentes',
+        //     'email'     => 'dealer@gmail.com',
+        //     'password'  => Hash::make('dealer123'),
+        // ]);
+        // $dealer->assignRole('distribuidor');
+        $client9=User::create(['name'=>'Nancy','last_name'=>'Chablé Garcia','email'=>'n_chable@hotmail.com','password'=>Hash::make('9211409174'),]);$client9->assignRole('customer');
+
     }
 }

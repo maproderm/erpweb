@@ -17,7 +17,7 @@
                     <!--begin::Toolbar-->
                     <div class=" col-md-8 my-2 my-md-0 d-flex justify-content-end" data-kt-customer-table-toolbar="base">
                         <!--begin::Add customer-->
-                        <button type="button" class="btn btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Add Customer</button>
+                        <button type="button" class="btn btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_new_brand">Nueva Marca</button>
                         <!--end::Add customer-->
                     </div>
                     <!--end::Toolbar-->
@@ -42,6 +42,7 @@
         </div>
     </div>
 </div>
+@include('layouts.includes.admin.sales.config.new_brand')
 @endsection
 @push('scripts')
     <script type="text/javascript" src="{{  URL::asset ('js/admin/sales/config/brands.js?v='.rand())  }}"></script>

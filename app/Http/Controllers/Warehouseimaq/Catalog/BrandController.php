@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Warehouseimaq\Catalog;
 
 use App\Models\Rol;
 use App\Models\Imaqbrand;
+use App\Models\Imaqdivision;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Session;
 use App\Http\Resources\User\UserResource;
 use App\Http\Resources\User\UserCollection;
 
@@ -18,7 +21,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        //
+
         return view('admin.warehouseimaq.catalog.brand.index');
     }
 
@@ -40,7 +43,7 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
 

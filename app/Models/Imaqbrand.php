@@ -14,6 +14,8 @@ class Imaqbrand extends Model
     protected $fillable = [
         'id',
         'name',
+        'type',
+        'description',
     ];
 
 

@@ -212,7 +212,11 @@ var KTDatatablesButtons = function () {
     var handleSearchDatatable = function () {
         $('#filter_client_name').on('keyup', function(event){ // Filter by client name
             var client_name = $(this).val();
-            datatable.columns(1).search(client_name).draw();
+            // datatable.search(event.target.value).draw();
+            datatable.search(client_name).draw();
+            
+            // datatable.columns(1).search(client_name).draw();
+            // dt.search(e.target.value).draw();
         });
     }
 

@@ -29,8 +29,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
-        return view('admin.sales.inventory.index');
+        return view( 'admin.sales.inventory.index');
     }
 
     public function revise()
@@ -153,9 +152,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editProductSale($id)
     {
-        //
+
     }
 
     /**

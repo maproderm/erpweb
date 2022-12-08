@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Sales\Pedido;
-use App\Http\Controllers\Controller;
+use App\Models\Mpdorder;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PedidoController extends Controller
 {
@@ -12,7 +13,7 @@ class PedidoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Mpdorder $order)
     {
         return view('admin.sales.pedidos.index');
     }
@@ -53,6 +54,19 @@ class PedidoController extends Controller
     {
         //
     }
+
+    public function getOrdersMapro() {
+        // $request = request();
+        // $inventory   = Mpdorder::with(['user']);
+        // return $inventory
+        //         ->wherein('status', [0, 1, 2, 3])
+        //         ->get();
+
+        $request = request();
+        $orders   = Mpdorder::with(['user']);
+        return $orders->get();
+    }
+
 
     /**
      * Show the form for editing the specified resource.

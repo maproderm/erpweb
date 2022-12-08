@@ -14,6 +14,9 @@
                             </span>
                         </div>
                     </div>
+                    <div class=" col-md-8 my-2 my-md-0 d-flex justify-content-end" data-kt-customer-table-toolbar="base">
+                        <button type="button" class="btn btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_new_provider">Agregar</button>
+                    </div>
                 </div>
                 <!--begin::Datatable-->
                 {{-- <table class="table align-middle table-row-dashed fs-6 gy-5 ajax_datatable"> --}}
@@ -40,6 +43,7 @@
         </div>
     </div>
 </div>
+@include('layouts.includes.admin.warehouseimaq.catalog.new_provider')
 @endsection
 @push('scripts')
     <script type="text/javascript" src="{{  URL::asset ('js/admin/warehouseimaq/catalog/provider/providers.js?v='.rand())  }}"></script>

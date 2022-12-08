@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Sales\Config;
 use App\Models\Imaqbrand;
 use App\Models\Imaqcategory;
+use App\Models\Imaqdivision;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Session;
 
 class ConfigmaproController extends Controller
 {
@@ -20,7 +23,9 @@ class ConfigmaproController extends Controller
 
     public function categories()
     {
-        return view('admin.sales.config.categories');
+        $data               = (object)[];
+        $data->division     = Imaqdivision::all();
+        return view('admin.sales.config.categories', compact('data'));
     }
 
     public function brands()
@@ -61,9 +66,34 @@ class ConfigmaproController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeBrand(Request $request)
     {
-        //
+        $event = Imaqbrand::create([
+            'name' =>$request->name_brand,
+            'type' =>$request->type_brand,
+            'description' =>$request->description_brand,
+        ]);
+        event(new Registered($event));
+        Session::flash('alert',[ // Message for Swal general alert
+            'type'    => 'success',
+            'message' => 'Nueva marca registrada'
+        ]);
+        return back();
+    }
+
+    public function storeCategory(Request $request)
+    {
+        $event = Imaqcategory::create([
+            'name' =>$request->name_category,
+            'division_id' =>$request->id_division,
+        ]);
+        event(new Registered($event));
+        Session::flash('alert',[ // Message for Swal general alert
+            'type'    => 'success',
+            'message' => 'Nueva categoría registrada'
+        ]);
+        // return redirect()->route('view-products');
+        return back();
     }
 
     /**

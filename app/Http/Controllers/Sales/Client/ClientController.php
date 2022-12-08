@@ -5,6 +5,9 @@ use App\Models\User;
 use App\Models\Mpdclient;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Session;
 
 class ClientController extends Controller
 {
@@ -34,9 +37,30 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeClient(Request $request)
     {
-        //
+        $event = User::create([
+            'name'          =>$request->name_client,
+            'last_name'     =>$request->last_name_client,
+            'email'         =>$request->email_client,
+            'membership'    =>$request->membership_client,
+            'password'      => Hash::make('Mpd.2024'),
+        ]);
+        $event->assignRole('customer');
+
+        $event->clientInformation()->create([
+            'address'           => $request->address_client,
+            'city'              => $request->city_client,
+            'postal_code'       => $request->postal_code_client,
+            'phone'             => $request->phone_client,
+        ]);
+
+        event(new Registered($event));
+        Session::flash('alert',[ // Message for Swal general alert
+            'type'    => 'success',
+            'message' => 'Nuevo cliente registrado'
+        ]);
+        return back();
     }
 
     /**
@@ -85,7 +109,7 @@ class ClientController extends Controller
     }
 
     public function getClients() {
-        // $users   = User::role('customer');
+        // $clients   = User::role('distribuidor');
         // return $users->get();
         $request = request();
         $clients   = Mpdclient::with(['client']);

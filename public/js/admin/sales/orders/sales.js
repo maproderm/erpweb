@@ -6,7 +6,7 @@ var KTDatatablesButtons = function () {
     var datatable;
     // Private functions
     var initDatatable = function () {
-        let url     = `${HOST_URL}/clientes/get-clients-all`;
+        let url     = `${HOST_URL}/pedidos/get-all`;
         let columns = [
             {   //ID
                 targets   : 0,
@@ -14,118 +14,77 @@ var KTDatatablesButtons = function () {
                 orderable : true,
                 asc       : true,
                 render    : function (data,type, row) {
-                    return `${row.client.id}`;
+                    // return `${row.id}`;
+                    return `${row.num_order}`;
                 }
             },
             {
                 //NAME
                 targets   : 1,
                 render    : function (data, type, row) {
-                    return `${row.client.name}`;
-                }
-            },
-            {
-                //LAST_NAME
-                targets: 2,
-                render: function (data, type, row) {
-                    return `${row.client.last_name}`;
+                    return `${row.user.name} ${row.user.last_name}`;
                 }
             },
             {
                 //EMAIL
-                targets: 3,
-                render: function (data, type, row) {
-                    return `${row.client.email}`;
-                }
-            },
-            {
-                //ADDRESS
-                targets: 4,
-                render: function (data, type, row) {
-                    return `${row.address}`;
-                }
-            },
-            {
-                //CITY
-                targets: 5,
-                render: function (data, type, row) {
-                    return `${row.city}`;
-                }
-            },
-            {
-                //POSTAL_CODE
-                targets: 6,
-                render: function (data, type, row) {
-                    return `${row.postal_code}`;
-                }
-            },
-            {
-                //PHONE
-                targets: 7,
-                render: function (data, type, row) {
-                    return `${row.phone}`;
-                }
-            },
-            {
-                //ORDERS
-                targets: 8,
-                className : 'dt-head-center dt-body-center',
-                render: function (data, type, row) {
-                    return `${row.orders}`;
-                }
-            },
-            {
-                //GASTO_TOTAL
-                targets: 9,
-                className : 'dt-head-center dt-body-center',
+                targets   : 1,
                 render    : function (data, type, row) {
-                    return `$${Number(row.gasto_total).toFixed(2)}`;
+                    return `${row.user.email}`;
                 }
             },
             {
-                //VMP
-                targets: 10,
-                className : 'dt-head-center dt-body-center',
+                //TOTAL
+                targets: 2,
+                // className : 'dt-head-center dt-body-center',
                 render    : function (data, type, row) {
-                    return `$${Number(row.vmp).toFixed(2)}`;
+                    return `$${Number(row.total).toFixed(2)}`;
+                }
+            },
+            {
+                //DATE CREATED
+                targets   : 1,
+                render    : function (data, type, row) {
+                    if (row.created_at == null) {
+                        return `<span class="badge badge-secondary">--</span>`;
+                    }else {
+                        let date       = new Date(row.created_at),
+                        // dateFormat = new Intl.DateTimeFormat('es', { year: 'numeric',month: 'long',day: '2-digit' }).format(date);
+                        dateFormat = new Intl.DateTimeFormat('es').format(date);
+                        return `${dateFormat}`;
+                    }
                 }
             },
             {
                 //STATUS
-                targets: 11,
-                render: function (data, type, row) {
-                    if (row.client.status == 1) {
-                        return `<span class="badge badge-light-success">Activo</span>`;
-                    }if (row.client.status == 2){
-                        return `<span class="badge badge-light-danger">Inactivo</span>`;
+                targets   : 3,
+                render    : function (data, type, row) {
+                    if (row.status == 0) {
+                        return `<span class="badge badge-secondary">Borrador</span>`;
+                    }if (row.status == 1){
+                        return `<span class="badge badge-light-primary">Cotización</span>`;
+                    }if (row.status == 2){
+                        return `<span class="badge badge-light-info">Procesando</span>`;
+                    }if (row.status == 3){
+                        return `<span class="badge badge-success">Completado</span>`;
+                    }if (row.status == 4){
+                        return `<span class="badge badge-light-danger">Cancelado</span>`;
                     } else {
                         return `<span class="badge badge-light-secondary">--</span>`;
                     }
-                }
-            },
-            {
-                //LAST_LOGIN
-                targets: 12,
-                className : 'dt-head-center dt-body-center',
-                render: function (data, type, row) {
-                    if (row.client.last_login == null) {
-                        return `<span class="badge badge-light-secondary">--</span>`;
-                    } else {
-                        return `${row.client.last_login}`;
-                    }
-
                 }
             },
             {
                 //ACCIONES
-                targets: 13,
+                targets: 4,
                 data: null,
                 orderable: false,
-                className : 'dt-head-center dt-body-center',
+                className: 'text-center',
                 render: function (data, type, row) {
                     return `
-                        <a href="${HOST_URL}/user/editar/${row.id}" class="btn btn-icon btn-light-warning"><i class="bi bi-pencil"></i></i></a>
-                        <a href="#" class="btn btn-icon btn-light-danger" data-kt-docs-table-filter="delete_row" data-user-id="${row.id}"><i class="bi bi-trash fs-2 me-2"></i></i></a>
+                        <a href="#" class="btn btn-icon btn-light-primary"><i class="bi bi-eye-fill fs-2 me-2"></i></i></a>
+                        <a href="#" class="btn btn-icon btn-light-info"><i class="bi bi-printer fs-2 me-2"></i></i></a>
+                        <a href="#" class="btn btn-icon btn-light-warning" data-bs-toggle="modal" data-bs-target="#kt_modal_new_target" id="kt_toolbar_primary_button"><i class="bi bi-pencil"></i></i></a>
+                        <a href="#" class="btn btn-icon btn-light-danger"><i class="bi bi-trash fs-2 me-2"></i></i></a>
                     `;
                 }
             },
@@ -137,8 +96,11 @@ var KTDatatablesButtons = function () {
     var handleSearchDatatable = function () {
         $('#filter_client_name').on('keyup', function(event){ // Filter by client name
             var client_name = $(this).val();
-            // datatable.columns(1).search(client_name).draw();
+            // datatable.search(event.target.value).draw();
             datatable.search(client_name).draw();
+
+            // datatable.columns(1).search(client_name).draw();
+            // dt.search(e.target.value).draw();
         });
     }
 
@@ -192,6 +154,8 @@ var KTDatatablesButtons = function () {
             })
         });
     }
+
+
 
     // Public methods
     return {

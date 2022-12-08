@@ -22,6 +22,7 @@ class User extends Authenticatable
         'name',
         'last_name',
         'email',
+        'membership',
         'password',
         'last_login',
         'status',
@@ -45,6 +46,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function clientInformation() {
+        return $this->hasOne('App\Models\Mpdclient');
+    }
 
     public function provider() {
         return $this->belongsTo('App\Models\Imaqprovider', 'provider_id', 'id');

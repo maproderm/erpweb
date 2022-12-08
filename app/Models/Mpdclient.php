@@ -18,7 +18,7 @@ class Mpdclient extends Model
      */
     protected $fillable = [
         'id',
-        'client_id',
+        'user_id',
         'address',
         'city',
         'postal_code',
@@ -29,7 +29,7 @@ class Mpdclient extends Model
     ];
 
     public function client() {
-        return $this->belongsTo('App\Models\User', 'client_id', 'id');
+        return $this->belongsTo('App\Models\User', 'user_id', 'id');
     }
 
 

@@ -5,15 +5,16 @@
     <div class="container-fluid">
         <div class="card card-custom">
             <div class="card-body">
-                <div class="p-5">
+                <div class="d-flex p-5">
                     <div class="col-md-4 my-2 my-md-0">
                         <div class="input-icon">
                             <input type="text" class="form-control" placeholder="Buscar cliente" id="filter_client_name"/>
                             <span>
-                                {{-- <i class="flaticon2-search-1 text-muted"></i> --}}
-                                {{-- <i class="fonticon-bicycle text-muted"></i> --}}
                             </span>
                         </div>
+                    </div>
+                    <div class=" col-md-8 my-2 my-md-0 d-flex justify-content-end" data-kt-customer-table-toolbar="base">
+                        <button type="button" class="btn btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_new_client">Agregar</button>
                     </div>
                 </div>
                 <!--begin::Datatable-->
@@ -44,6 +45,7 @@
         </div>
     </div>
 </div>
+@include('layouts.includes.admin.sales.clients.new_client')
 @endsection
 @push('scripts')
     <script type="text/javascript" src="{{  URL::asset ('js/admin/sales/client/clients.js?v='.rand())  }}"></script>
