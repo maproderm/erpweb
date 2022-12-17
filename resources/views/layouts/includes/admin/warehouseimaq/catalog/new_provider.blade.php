@@ -1,4 +1,4 @@
-<div class="modal fade" id="kt_modal_new_provider" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="kt_modal_new_provider_imaq" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-900px">
         <!--begin::Modal content-->
@@ -25,14 +25,14 @@
                 <!--begin::Heading-->
                 <div class="mb-13 text-center">
                     <h1 class="mb-3">Nuevo Proveedor</h1>
-                    <div class="text-muted fw-semibold fs-5">Completa todos los datos para el nuevo cliente
-                    <a xhref="#" class="link-info fw-bold">MaProDerm</a>.</div>
+                    <div class="text-muted fw-semibold fs-5">Completa todos los datos para el nuevo proveedor
+                    <a xhref="#" class="link-primary fw-bold">IMAQ</a>.</div>
                 </div>
                 <!--end::Heading-->
                 <div class="card-body pt-5">
                     <!--begin::Form-->
 
-                    <form id="kt_ecommerce_settings_general_form" class="form" action="{{  route('clientes.storeclient')  }}" method="POST">
+                    <form id="kt_ecommerce_settings_general_form" class="form" action="{{  route('catalogimaq.storeproviderimaq')  }}" method="POST">
                         @csrf
                         <!--begin::Row-->
                         <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
@@ -42,12 +42,12 @@
                                 <div class="fv-row mb-5">
                                     <!--begin::Label-->
                                     <label class="fs-6 fw-bold form-label mt-3">
-                                        <span class="required">Nombre del cliente</span>
-                                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Ingresa el nombre del resonsable del negocio"></i>
+                                        <span class="required">Nombre del proveedor</span>
+                                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Ingresa el nombre del proveedor de productos"></i>
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="name_client" value="" required placeholder="Nombre del cliente"/>
+                                    <input type="text" class="form-control" name="name_provider_imaq" value="" required placeholder="Nombre del proveedor" autocomplete="off"/>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
@@ -59,11 +59,11 @@
                                 <div class="fv-row mb-7">
                                     <!--begin::Label-->
                                     <label class="fs-6 fw-bold form-label mt-3">
-                                        <span class="required">Apellido del Cliente</span>
+                                        <span class="required">Apellido del proveedor</span>
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="last_name_client" value="" required/>
+                                    <input type="text" class="form-control" name="last_name_provider_imaq" value="" required autocomplete="off"/>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
@@ -79,11 +79,11 @@
                                 <div class="fv-row mb-7">
                                     <!--begin::Label-->
                                     <label class="fs-6 fw-bold form-label mt-3">
-                                        <span class="required">Correo electrónico del cliente</span>
+                                        <span class="required">Correo electrónico del proveedor</span>
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="email" class="form-control" name="email_client" value="" required/>
+                                    <input type="email" class="form-control" name="email_provider_imaq" value="" required autocomplete="off"/>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
@@ -94,11 +94,11 @@
                                 <div class="fv-row mb-7">
                                     <!--begin::Label-->
                                     <label class="fs-6 fw-bold form-label mt-3">
-                                        <span>N° de Membresía</span>
+                                        <span class="required">Teléfono</span>
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="membership_client" value="" />
+                                    <input type="phone" class="form-control" name="phone_provider_imaq" value="" required autocomplete="off"/>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
@@ -107,6 +107,22 @@
                         <!--end::Row-->
                         <!--begin::Row-->
                         <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+                            <!--begin::Col-->
+                            <div class="col">
+                                <!--begin::Input group-->
+                                <div class="fv-row mb-7">
+                                    <!--begin::Label-->
+                                    <label class="fs-6 fw-bold form-label mt-3">
+                                        <span class="required">RFC</span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <input type="text" class="form-control" name="rfc_provider_imaq" value="" required autocomplete="off"/>
+                                    <!--end::Input-->
+                                </div>
+                                <!--end::Input group-->
+                            </div>
+                            <!--end::Col-->
                             <!--begin::Col-->
                             <div class="col">
                                 <!--begin::Input group-->
@@ -117,59 +133,7 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="address_client" value="" required/>
-                                    <!--end::Input-->
-                                </div>
-                                <!--end::Input group-->
-                            </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Input group-->
-                                <div class="fv-row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="fs-6 fw-bold form-label mt-3">
-                                        <span class="required">Ciudad</span>
-                                    </label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <input type="text" class="form-control" name="city_client" value="" required/>
-                                    <!--end::Input-->
-                                </div>
-                                <!--end::Input group-->
-                            </div>
-                            <!--end::Col-->
-                        </div>
-                        <!--end::Row-->
-                        <!--begin::Row-->
-                        <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Input group-->
-                                <div class="fv-row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="fs-6 fw-bold form-label mt-3">
-                                        <span class="required">Código Postal</span>
-                                    </label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <input type="text" class="form-control" name="postal_code_client" value="" required/>
-                                    <!--end::Input-->
-                                </div>
-                                <!--end::Input group-->
-                            </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Input group-->
-                                <div class="fv-row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="fs-6 fw-bold form-label mt-3">
-                                        <span class="required">Teléfono</span>
-                                    </label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <input type="text" class="form-control" name="phone_client" value="" required/>
+                                    <input type="text" class="form-control" name="address_provider_imaq" value="" required autocomplete="off"/>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
@@ -179,7 +143,7 @@
                         <!--end::Row-->
                         <!--begin::Separator-->
                         <div class="separator mb-6"></div>
-                        <div class="stepper-label text-gray-500">La contraseña por defaul es Mpd.2024</div>
+                        <div class="stepper-label text-gray-500">La contraseña por defaul es Imaq.2024</div>
                         <!--end::Separator-->
                         <!--begin::Action buttons-->
                         <div class="d-flex flex-center flex-row-fluid pt-12">
@@ -188,7 +152,7 @@
                             <!--end::Button-->
                             <!--begin::Button-->
                             <button type="submit" data-kt-contacts-type="submit" class="btn btn-primary">
-                                <span class="indicator-label">Guardar cliente</span>
+                                <span class="indicator-label">Guardar proveedor</span>
                                 <span class="indicator-progress">Guardando...
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                             </button>

@@ -6,7 +6,7 @@ var KTDatatablesButtons = function () {
     var datatable;
     // Private functions
     var initDatatable = function () {
-        let url     = `${HOST_URL}/providers/get-general-all`;
+        let url     = `${HOST_URL}/providers/get-imaq-all`;
         let columns = [
             {   //ID
                 targets   : 0,

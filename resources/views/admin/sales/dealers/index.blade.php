@@ -30,9 +30,9 @@
                         <th>Teléfono</th>
                         <th>N° Pedidos</th>
                         <th>Gasto Total</th>
-                        <th>Promedio</th>
+                        {{-- <th>Promedio</th> --}}
                         <th>Estatus</th>
-                        <th>ültimo Login</th>
+                        {{-- <th>ültimo Login</th> --}}
                         <th class="text-center min-w-100px">Acciones</th>
                     </tr>
                     </thead>

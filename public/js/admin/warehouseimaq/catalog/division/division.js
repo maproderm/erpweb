@@ -6,7 +6,7 @@ var KTDatatablesButtons = function () {
     var datatable;
     // Private functions
     var initDatatable = function () {
-        let url     = `${HOST_URL}/categories/get-imaq-all`;
+        let url     = `${HOST_URL}/divisiones/get-imaq-all`;
         let columns = [
             {   //ID
                 targets   : 0,
@@ -29,31 +29,8 @@ var KTDatatablesButtons = function () {
                 }
             },
             {
-                //LINE_ID
-                targets: 2,
-                render: function (data, type, row) {
-                    return `${row.division.name}`;
-                }
-            },
-            {
-                //LINE_ID
-                targets: 2,
-                render: function (data, type, row) {
-                    if(row.status == null){
-                        return `<span class="badge badge-light-warning">--</span>`;
-                    }if (row.status == 1) {
-                        return `<span class="badge badge-light-success">Activo</span>`;
-                    }if (row.status == 2){
-                        return `<span class="badge badge-light-danger">Inactivo</span>`;
-                    } else {
-                        return `<span class="badge badge-light-secondary">--</span>`;
-                    }
-                }
-            },
-
-            {
                 //ACCIONES
-                targets: 3,
+                targets: 2,
                 data: null,
                 orderable: false,
                 className : 'dt-head-center dt-body-center',

@@ -51,6 +51,10 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\Mpdclient');
     }
 
+    public function providerInformation() {
+        return $this->hasOne('App\Models\Imaqprovider');
+    }
+
     public function provider() {
         return $this->belongsTo('App\Models\Imaqprovider', 'provider_id', 'id');
     }

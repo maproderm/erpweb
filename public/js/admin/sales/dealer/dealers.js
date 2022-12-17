@@ -82,17 +82,17 @@ var KTDatatablesButtons = function () {
                     return `$${Number(row.gasto_total).toFixed(2)}`;
                 }
             },
-            {
-                //VMP
-                targets: 10,
-                className : 'dt-head-center dt-body-center',
-                render    : function (data, type, row) {
-                    return `$${Number(row.vmp).toFixed(2)}`;
-                }
-            },
+            // {
+            //     //VMP
+            //     targets: 10,
+            //     className : 'dt-head-center dt-body-center',
+            //     render    : function (data, type, row) {
+            //         return `$${Number(row.vmp).toFixed(2)}`;
+            //     }
+            // },
             {
                 //STATUS
-                targets: 11,
+                targets: 10,
                 render: function (data, type, row) {
                     if (row.dealer.status == 1) {
                         return `<span class="badge badge-light-success">Activo</span>`;
@@ -103,22 +103,22 @@ var KTDatatablesButtons = function () {
                     }
                 }
             },
-            {
-                //LAST_LOGIN
-                targets: 12,
-                className : 'dt-head-center dt-body-center',
-                render: function (data, type, row) {
-                    if (row.dealer.last_login == null) {
-                        return `<span class="badge badge-light-secondary">--</span>`;
-                    } else {
-                        return `${row.dealer.last_login}`;
-                    }
+            // {
+            //     //LAST_LOGIN
+            //     targets: 12,
+            //     className : 'dt-head-center dt-body-center',
+            //     render: function (data, type, row) {
+            //         if (row.dealer.last_login == null) {
+            //             return `<span class="badge badge-light-secondary">--</span>`;
+            //         } else {
+            //             return `${row.dealer.last_login}`;
+            //         }
 
-                }
-            },
+            //     }
+            // },
             {
                 //ACCIONES
-                targets: 13,
+                targets: 11,
                 data: null,
                 orderable: false,
                 className : 'dt-head-center dt-body-center',

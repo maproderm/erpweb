@@ -8,11 +8,14 @@
                 <div class="d-flex p-5">
                     <div class="col-md-4 my-2 my-md-0">
                         <div class="input-icon">
-                            <input type="text" class="form-control" placeholder="Buscar marcas" id="filter_client_name"/>
+                            <input type="text" class="form-control" placeholder="Buscar categoría" id="filter_client_name"/>
                             <span>
                                 <i class="flaticon2-search-1 text-muted"></i>
                             </span>
                         </div>
+                    </div>
+                    <div class=" col-md-8 my-2 my-md-0 d-flex justify-content-end" data-kt-customer-table-toolbar="base">
+                        <button type="button" class="btn btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_new_category_imaq">Agregar</button>
                     </div>
                 </div>
                 <!--begin::Datatable-->
@@ -36,7 +39,7 @@
         </div>
     </div>
 </div>
-{{-- @include('layouts.includes.new_category') --}}
+@include('layouts.includes.admin.warehouseimaq.catalog.new_category')
 @endsection
 @push('scripts')
     <script type="text/javascript" src="{{  URL::asset ('js/admin/warehouseimaq/catalog/category/category.js?v='.rand())  }}"></script>

@@ -31,10 +31,4 @@ require __DIR__.'/includes/warehouseimaq.php';
 
 require __DIR__.'/includes/warehousemapro.php';
 
-require __DIR__.'/includes/imaqprovider.php';
-
-require __DIR__.'/includes/imaqbrand.php';
-
-require __DIR__.'/includes/imaqcategory.php';
-
 require __DIR__.'/includes/sales.php';

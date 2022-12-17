@@ -19,5 +19,6 @@ class Imaqdivision extends Model
     protected $fillable = [
         'id',
         'name',
+        'abrv',
     ];
 }
